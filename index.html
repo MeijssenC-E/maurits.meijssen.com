@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e2">
+  <title>Maurits Meijssen</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      color: #233d50;
+      background: #f4f0e2;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100svh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: clamp(1rem, 4vw, 3rem);
+    }
+
+    main {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      width: min(100%, 1100px);
+      min-height: min(700px, calc(100svh - 2 * clamp(1rem, 4vw, 3rem)));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      border: 1px solid rgba(35, 61, 80, .12);
+      border-radius: 1.5rem;
+      background: #f4f0e2;
+    }
+
+    main::before, main::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    main::before {
+      width: clamp(15rem, 42vw, 32rem);
+      aspect-ratio: 1;
+      top: -28%;
+      right: -9%;
+      background: #a6c8e2;
+    }
+
+    main::after {
+      width: clamp(10rem, 27vw, 20rem);
+      aspect-ratio: 1;
+      right: 12%;
+      bottom: -27%;
+      background: #f4baa3;
+    }
+
+    .name {
+      margin: 0;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .intro {
+      padding: 2rem 0;
+    }
+
+    .hello {
+      display: inline-block;
+      margin: 0 0 1.25rem;
+      padding: .5rem .85rem;
+      border-radius: 999px;
+      background: #f4baa3;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+    }
+
+    h1 {
+      max-width: 10ch;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -.05em;
+    }
+
+    .description {
+      max-width: 28rem;
+      margin: 1.5rem 0 0;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      line-height: 1.6;
+    }
+
+    .linkedin {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .85rem 1.1rem;
+      border-radius: 999px;
+      background: #619dc6;
+      color: #102e42;
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+    }
+
+    .linkedin:hover { background: #a6c8e2; transform: translateY(-2px); }
+    .linkedin:focus-visible { outline: 3px solid #233d50; outline-offset: 4px; }
+    .linkedin svg { width: 1.2rem; height: 1.2rem; fill: currentColor; }
+
+    @media (max-height: 600px) {
+      body { padding: 1rem; }
+      main { min-height: 0; padding: 1.25rem; }
+      .intro { padding: .75rem 0; }
+      .hello { margin-bottom: .5rem; }
+      h1 { max-width: none; font-size: clamp(2.5rem, 8vw, 4rem); }
+      .description { margin-top: .75rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .linkedin { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="name">Maurits Meijssen</p>
+    <div class="intro">
+      <p class="hello">Hello there!</p>
+      <h1>Maurits Meijssen.</h1>
+      <p class="description">Welcome to my personal website. It's a work in progress, so there's more to come.</p>
+    </div>
+    <a class="linkedin" href="https://www.linkedin.com/in/mauritsmeijssen/">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.75H4.97V9.21h2.96v9.54ZM6.45 7.91a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm12.3 10.84H15.8v-4.64c0-1.11-.02-2.53-1.54-2.53-1.54 0-1.78 1.21-1.78 2.45v4.72H9.53V9.21h2.83v1.3h.04c.39-.75 1.36-1.54 2.79-1.54 2.98 0 3.56 1.96 3.56 4.51v5.27Z"/>
+      </svg>
+      Find me on LinkedIn
+    </a>
+  </main>
+</body>
+</html>
