@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Klantportaal — 3D Productcatalogus</title>
+  <title>Gohres Metaalconstructie B.V. — 3D Klantportaal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script type="importmap">
     {
@@ -19,141 +19,135 @@
 
   <style>
     :root {
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --surface-muted: #f1f5f9;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --accent: #0f172a;
-      --accent-hover: #1e293b;
-      --brand: #2563eb;
-      --brand-soft: #eff6ff;
-      --danger: #dc2626;
-      --radius: 12px;
-      --shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.12);
+      --loyal-blue: #00425D;
+      --loyal-blue-dark: #003146;
+      --loyal-blue-soft: #EBF2F5;
+      --steel-blue: #587687;
+      --mango: #F3972D;
+      --mango-hover: #DC821D;
+      --mango-soft: #FEF4E8;
+      --bg: #F4F7F9;
+      --surface: #FFFFFF;
+      --surface-muted: #EDF2F5;
+      --text: #0E2530;
+      --text-muted: #526875;
+      --border: #D9E2E8;
+      --danger: #C82828;
+      --radius: 4px;
+      --shadow: 0 12px 32px -10px rgba(0, 66, 93, 0.14);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.55;
       min-height: 100vh;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--loyal-blue);
     }
 
     button, input, textarea {
       font-family: inherit;
-      font-size: 0.95rem;
+      font-size: 0.96rem;
     }
 
     .hidden { display: none !important; }
 
-    /* ================= LOGIN SCREEN ================= */
-    #login-screen {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      background: radial-gradient(circle at top right, #e2e8f0 0%, #f8fafc 55%);
-    }
-
-    .login-card {
-      width: 100%;
-      max-width: 420px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 36px 32px;
-      box-shadow: var(--shadow);
-    }
-
-    .brand-mark {
+    /* ================= BRAND LOGO ================= */
+    .gohres-logo {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      font-size: 1.05rem;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .gohres-logo svg {
+      width: 46px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--loyal-blue);
       letter-spacing: -0.02em;
-      margin-bottom: 24px;
     }
 
-    .brand-dot {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-size: 0.8rem;
-      font-weight: 700;
+    .logo-sub {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--steel-blue);
+      letter-spacing: 0.02em;
     }
 
-    .login-card h1 {
-      font-size: 1.5rem;
-      letter-spacing: -0.02em;
-      margin-bottom: 6px;
-    }
+    .logo-light .logo-name { color: #FFFFFF; }
+    .logo-light .logo-sub { color: rgba(255, 255, 255, 0.78); }
 
-    .login-card p.subtitle {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 24px;
-    }
-
-    .field { margin-bottom: 16px; }
-
-    .field label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
-
-    .field input, .field textarea {
-      width: 100%;
-      padding: 11px 13px;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: var(--surface);
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.15s;
-    }
-
-    .field input:focus, .field textarea:focus { border-color: var(--brand); }
-
+    /* ================= BUTTONS ================= */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 11px 16px;
-      border-radius: 9px;
+      padding: 11px 20px;
+      border-radius: var(--radius);
       border: 1px solid transparent;
-      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
       cursor: pointer;
-      transition: all 0.15s;
+      transition: all 0.16s ease;
     }
+
+    .btn-mango {
+      background: var(--mango);
+      color: #FFFFFF;
+    }
+
+    .btn-mango:hover { background: var(--mango-hover); }
 
     .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      width: 100%;
+      background: var(--loyal-blue);
+      color: #FFFFFF;
     }
 
-    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-primary:hover { background: var(--loyal-blue-dark); }
 
     .btn-secondary {
       background: var(--surface);
-      border-color: var(--border);
-      color: var(--text);
+      border-color: var(--loyal-blue);
+      color: var(--loyal-blue);
     }
 
-    .btn-secondary:hover { background: var(--surface-muted); }
+    .btn-secondary:hover {
+      background: var(--loyal-blue);
+      color: #FFFFFF;
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.45);
+      color: #FFFFFF;
+    }
+
+    .btn-outline-light:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
 
     .btn-ghost {
       background: transparent;
@@ -163,16 +157,146 @@
 
     .btn-ghost:hover {
       background: var(--surface-muted);
+      color: var(--loyal-blue);
+    }
+
+    /* ================= LOGIN SCREEN ================= */
+    #login-screen {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        linear-gradient(125deg, var(--loyal-blue) 0%, var(--loyal-blue-dark) 52%, var(--bg) 52.1%, var(--bg) 100%);
+    }
+
+    .login-shell {
+      width: 100%;
+      max-width: 880px;
+      background: var(--surface);
+      border-radius: 6px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      box-shadow: 0 24px 60px rgba(0, 49, 70, 0.28);
+      border: 1px solid rgba(0, 66, 93, 0.12);
+    }
+
+    @media (max-width: 780px) {
+      .login-shell { grid-template-columns: 1fr; }
+      #login-screen { background: var(--loyal-blue); }
+    }
+
+    .login-brand-panel {
+      position: relative;
+      background: var(--loyal-blue);
+      color: #FFFFFF;
+      padding: 44px 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .login-brand-panel::after {
+      content: '';
+      position: absolute;
+      right: -60px;
+      bottom: -60px;
+      width: 180px;
+      height: 180px;
+      background: var(--mango);
+      transform: rotate(45deg);
+      opacity: 0.92;
+    }
+
+    .login-brand-panel h1 {
+      color: #FFFFFF;
+      font-size: 1.85rem;
+      line-height: 1.2;
+      margin: 28px 0 14px;
+    }
+
+    .login-brand-panel p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.98rem;
+      max-width: 320px;
+    }
+
+    .login-usps {
+      list-style: none;
+      margin-top: 28px;
+      display: grid;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .login-usps li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .usp-chevron {
+      color: var(--mango);
+      font-weight: 800;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .login-form-panel {
+      padding: 44px 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .login-form-panel h2 {
+      font-size: 1.45rem;
+      margin-bottom: 6px;
+    }
+
+    .login-form-panel .subtitle {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+    }
+
+    .field { margin-bottom: 16px; }
+
+    .field label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--loyal-blue);
+      margin-bottom: 6px;
+    }
+
+    .field input, .field textarea {
+      width: 100%;
+      padding: 11px 13px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
       color: var(--text);
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .field input:focus, .field textarea:focus {
+      border-color: var(--loyal-blue);
+      box-shadow: 0 0 0 3px rgba(0, 66, 93, 0.1);
     }
 
     .demo-box {
-      margin-top: 20px;
+      margin-top: 22px;
       padding: 14px;
-      border-radius: 10px;
-      background: var(--surface-muted);
-      border: 1px dashed #cbd5e1;
-      font-size: 0.83rem;
+      border-radius: var(--radius);
+      background: var(--loyal-blue-soft);
+      border-left: 4px solid var(--mango);
+      font-size: 0.85rem;
       color: var(--text-muted);
       display: flex;
       align-items: center;
@@ -180,26 +304,58 @@
       gap: 12px;
     }
 
-    .demo-box strong { color: var(--text); display: block; margin-bottom: 2px; }
+    .demo-box strong {
+      color: var(--loyal-blue);
+      display: block;
+      margin-bottom: 2px;
+    }
 
     .error-msg {
       margin-bottom: 14px;
       padding: 10px 12px;
-      border-radius: 8px;
-      background: #fef2f2;
+      border-radius: var(--radius);
+      background: #FEF2F2;
       color: var(--danger);
-      font-size: 0.85rem;
-      border: 1px solid #fecaca;
+      font-size: 0.86rem;
+      border-left: 4px solid var(--danger);
     }
 
-    /* ================= PORTAL HEADER ================= */
+    /* ================= TOPBAR & HEADER ================= */
+    .topbar {
+      background: var(--loyal-blue);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.8rem;
+    }
+
+    .topbar-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 7px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .topbar-usps {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .topbar-usps span::before {
+      content: '▸ ';
+      color: var(--mango);
+    }
+
     header {
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(10px);
+      background: var(--surface);
       border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 16px rgba(0, 66, 93, 0.05);
     }
 
     .header-inner {
@@ -217,49 +373,135 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
+    .phone-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--mango);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: var(--radius);
+    }
+
+    .phone-chip:hover { background: var(--mango-hover); }
+
     .user-pill {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      background: var(--surface-muted);
-      padding: 7px 12px;
-      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--loyal-blue);
+      background: var(--loyal-blue-soft);
+      padding: 7px 13px;
+      border-radius: var(--radius);
     }
 
     .badge {
-      background: var(--brand);
-      color: #fff;
-      font-size: 0.75rem;
+      background: var(--mango);
+      color: #FFFFFF;
+      font-size: 0.74rem;
       font-weight: 700;
       padding: 2px 7px;
       border-radius: 999px;
     }
 
+    /* ================= HERO BANNER ================= */
+    .hero-banner {
+      position: relative;
+      background: var(--loyal-blue);
+      color: #FFFFFF;
+      overflow: hidden;
+    }
+
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 34%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(243, 151, 45, 0.16) 0%, rgba(0, 49, 70, 0.85) 100%);
+      clip-path: polygon(22% 0, 100% 0, 100% 100%, 0% 100%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 42px 24px;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    @media (max-width: 820px) {
+      .hero-inner { grid-template-columns: 1fr; }
+    }
+
+    .hero-kicker {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--mango);
+      margin-bottom: 8px;
+    }
+
+    .hero-inner h1 {
+      color: #FFFFFF;
+      font-size: clamp(1.75rem, 3vw, 2.35rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .hero-inner p {
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 600px;
+      font-size: 1rem;
+    }
+
+    .hero-quick-links {
+      border-left: 3px solid var(--mango);
+      padding-left: 22px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .hero-quick-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.92);
+      cursor: pointer;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      text-align: left;
+      width: 100%;
+    }
+
+    .hero-quick-item:hover { color: var(--mango); }
+    .hero-quick-item span:last-child { color: var(--mango); font-weight: 700; }
+
     /* ================= CATALOG ================= */
     main {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 32px 24px 64px;
-    }
-
-    .catalog-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-
-    .catalog-head h2 {
-      font-size: 1.75rem;
-      letter-spacing: -0.02em;
-    }
-
-    .catalog-head p {
-      color: var(--text-muted);
-      margin-top: 4px;
+      padding: 36px 24px 64px;
     }
 
     .controls-bar {
@@ -268,7 +510,9 @@
       align-items: center;
       gap: 16px;
       flex-wrap: wrap;
-      margin-bottom: 24px;
+      margin-bottom: 26px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
     }
 
     .filter-pills {
@@ -278,39 +522,40 @@
     }
 
     .pill {
-      padding: 8px 14px;
-      border-radius: 999px;
+      padding: 8px 15px;
+      border-radius: var(--radius);
       border: 1px solid var(--border);
       background: var(--surface);
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      font-weight: 500;
+      color: var(--loyal-blue);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
       cursor: pointer;
       transition: all 0.15s;
     }
 
     .pill.active, .pill:hover {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
+      background: var(--loyal-blue);
+      color: #FFFFFF;
+      border-color: var(--loyal-blue);
     }
 
     .search-input {
-      width: 280px;
+      width: 300px;
       max-width: 100%;
       padding: 9px 14px;
       border: 1px solid var(--border);
-      border-radius: 9px;
+      border-radius: var(--radius);
       background: var(--surface);
       outline: none;
     }
 
-    .search-input:focus { border-color: var(--brand); }
+    .search-input:focus { border-color: var(--loyal-blue); }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 22px;
     }
 
     .card {
@@ -320,83 +565,113 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.18s, box-shadow 0.18s;
+      transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
     }
 
     .card:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow);
+      border-color: var(--loyal-blue);
     }
 
     .card-visual {
-      height: 180px;
-      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      height: 190px;
+      background: linear-gradient(145deg, #F8FAFC 0%, #E5EDF2 100%);
       position: relative;
       display: grid;
       place-items: center;
       cursor: pointer;
+      border-bottom: 1px solid var(--border);
     }
+
+    .card-visual::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--loyal-blue) 0%, var(--mango) 100%);
+      opacity: 0;
+      transition: opacity 0.18s;
+    }
+
+    .card:hover .card-visual::after { opacity: 1; }
 
     .card-visual .tag-3d {
       position: absolute;
       top: 12px;
       right: 12px;
-      background: rgba(15, 23, 42, 0.82);
-      color: #fff;
+      background: var(--loyal-blue);
+      color: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+    }
+
+    .card-visual .tag-cat {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--loyal-blue);
       font-size: 0.72rem;
       font-weight: 600;
-      padding: 4px 9px;
-      border-radius: 999px;
-      letter-spacing: 0.03em;
+      padding: 4px 8px;
+      border-radius: 3px;
+      border: 1px solid var(--border);
     }
 
     .card-visual svg {
       width: 64px;
       height: 64px;
-      color: #334155;
-      opacity: 0.85;
+      color: var(--loyal-blue);
+      opacity: 0.8;
     }
 
     .card-body {
-      padding: 18px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       flex: 1;
     }
 
-    .card-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
     .card-title {
       font-size: 1.05rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 6px;
+      color: var(--loyal-blue);
     }
 
-    .card-desc {
-      font-size: 0.88rem;
+    .card-sku {
+      font-size: 0.84rem;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 10px;
+    }
+
+    .card-sku strong { color: var(--text); }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
       flex: 1;
     }
 
     .card-footer {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+      gap: 8px;
       padding-top: 14px;
       border-top: 1px solid var(--border);
     }
 
-    .price {
-      font-weight: 700;
-      font-size: 1.05rem;
+    .card-footer .btn {
+      flex: 1;
+      padding: 9px 10px;
+      font-size: 0.78rem;
     }
 
     /* ================= 3D VIEWER MODAL ================= */
@@ -404,7 +679,7 @@
       position: fixed;
       inset: 0;
       z-index: 50;
-      background: rgba(15, 23, 42, 0.65);
+      background: rgba(0, 36, 51, 0.72);
       backdrop-filter: blur(4px);
       display: grid;
       place-items: center;
@@ -413,14 +688,14 @@
 
     .viewer-modal {
       width: 100%;
-      max-width: 1120px;
-      height: min(86vh, 720px);
+      max-width: 1140px;
+      height: min(88vh, 740px);
       background: var(--surface);
-      border-radius: 16px;
+      border-radius: 6px;
       overflow: hidden;
       display: grid;
       grid-template-columns: 1.35fr 1fr;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 28px 65px rgba(0, 20, 30, 0.4);
     }
 
     @media (max-width: 860px) {
@@ -433,7 +708,7 @@
 
     .viewer-stage {
       position: relative;
-      background: radial-gradient(circle at center, #ffffff 0%, #e2e8f0 100%);
+      background: radial-gradient(circle at center, #FFFFFF 0%, #E1E9EE 100%);
       overflow: hidden;
     }
 
@@ -449,12 +724,11 @@
       position: absolute;
       top: 14px;
       left: 14px;
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid var(--border);
-      padding: 6px 11px;
-      border-radius: 999px;
+      background: rgba(0, 66, 93, 0.9);
+      color: #FFFFFF;
+      padding: 6px 12px;
+      border-radius: 3px;
       font-size: 0.78rem;
-      color: var(--text-muted);
       pointer-events: none;
     }
 
@@ -465,27 +739,28 @@
       transform: translateX(-50%);
       display: flex;
       gap: 6px;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       border: 1px solid var(--border);
-      padding: 6px;
-      border-radius: 999px;
-      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+      padding: 5px;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 20px rgba(0, 66, 93, 0.12);
     }
 
     .tool-btn {
       border: none;
       background: transparent;
       padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--text);
+      border-radius: 3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--loyal-blue);
       cursor: pointer;
     }
 
     .tool-btn.active {
-      background: var(--accent);
-      color: #fff;
+      background: var(--loyal-blue);
+      color: #FFFFFF;
     }
 
     .viewer-loader {
@@ -495,14 +770,14 @@
       place-items: center;
       text-align: center;
       padding: 24px;
-      background: rgba(248, 250, 252, 0.88);
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-muted);
+      background: rgba(244, 247, 249, 0.9);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--loyal-blue);
     }
 
     .viewer-details {
-      padding: 26px;
+      padding: 28px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
@@ -514,35 +789,44 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 12px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .close-btn {
       width: 34px;
       height: 34px;
-      border-radius: 8px;
+      border-radius: var(--radius);
       border: 1px solid var(--border);
       background: var(--surface);
+      color: var(--loyal-blue);
       cursor: pointer;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      font-weight: 700;
       display: grid;
       place-items: center;
     }
 
-    .close-btn:hover { background: var(--surface-muted); }
+    .close-btn:hover {
+      background: var(--loyal-blue);
+      color: #FFFFFF;
+    }
 
     .finish-section { margin: 18px 0; }
 
     .finish-section label {
       display: block;
-      font-size: 0.82rem;
-      font-weight: 600;
-      margin-bottom: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--loyal-blue);
+      margin-bottom: 9px;
     }
 
     .swatches {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
     }
 
@@ -550,30 +834,31 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 6px 11px;
+      padding: 6px 10px;
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: var(--radius);
       background: var(--surface);
       font-size: 0.82rem;
       cursor: pointer;
     }
 
     .swatch.active {
-      border-color: var(--brand);
-      background: var(--brand-soft);
-      font-weight: 600;
+      border-color: var(--mango);
+      background: var(--mango-soft);
+      color: var(--loyal-blue);
+      font-weight: 700;
     }
 
     .swatch-dot {
       width: 14px;
       height: 14px;
-      border-radius: 50%;
-      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 2px;
+      border: 1px solid rgba(0, 0, 0, 0.22);
     }
 
     .specs-list {
       margin: 14px 0 22px;
-      border-top: 1px solid var(--border);
+      border-top: 2px solid var(--loyal-blue);
     }
 
     .spec-row {
@@ -581,11 +866,11 @@
       justify-content: space-between;
       padding: 9px 0;
       border-bottom: 1px solid var(--border);
-      font-size: 0.86rem;
+      font-size: 0.88rem;
     }
 
     .spec-row span:first-child { color: var(--text-muted); }
-    .spec-row span:last-child { font-weight: 500; }
+    .spec-row span:last-child { font-weight: 600; color: var(--loyal-blue); }
 
     .add-row {
       margin-top: auto;
@@ -595,43 +880,44 @@
     }
 
     .qty-input {
-      width: 72px;
+      width: 74px;
       padding: 10px;
       border: 1px solid var(--border);
-      border-radius: 9px;
+      border-radius: var(--radius);
       text-align: center;
+      font-weight: 600;
     }
 
-    /* ================= QUOTE DRAWER ================= */
+    /* ================= OFFERTEMAP DRAWER ================= */
     .drawer-backdrop {
       position: fixed;
       inset: 0;
       z-index: 60;
-      background: rgba(15, 23, 42, 0.5);
+      background: rgba(0, 36, 51, 0.6);
       display: flex;
       justify-content: flex-end;
     }
 
     .drawer {
       width: 100%;
-      max-width: 420px;
+      max-width: 440px;
       height: 100%;
       background: var(--surface);
       display: flex;
       flex-direction: column;
-      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .drawer-header, .drawer-footer {
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--border);
+      box-shadow: -12px 0 40px rgba(0, 42, 60, 0.22);
     }
 
     .drawer-header {
+      padding: 20px 24px;
+      background: var(--loyal-blue);
+      color: #FFFFFF;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+
+    .drawer-header h3 { color: #FFFFFF; font-size: 1.1rem; }
 
     .drawer-body {
       flex: 1;
@@ -640,31 +926,79 @@
     }
 
     .drawer-footer {
+      padding: 20px 24px;
       border-top: 1px solid var(--border);
-      border-bottom: none;
+      background: var(--bg);
     }
 
     .quote-item {
       display: flex;
       justify-content: space-between;
       gap: 12px;
-      padding: 12px 0;
+      padding: 13px 0;
       border-bottom: 1px solid var(--border);
     }
 
     .quote-item h4 { font-size: 0.94rem; }
-    .quote-item p { font-size: 0.8rem; color: var(--text-muted); }
+    .quote-item p { font-size: 0.84rem; color: var(--text-muted); }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: var(--loyal-blue);
+      color: rgba(255, 255, 255, 0.85);
+      border-top: 4px solid var(--mango);
+      margin-top: 32px;
+    }
+
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 36px 24px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 28px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 780px) {
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+
+    footer h4 {
+      color: #FFFFFF;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .cert-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .cert-badge {
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
 
     .toast {
       position: fixed;
       bottom: 24px;
       right: 24px;
       z-index: 80;
-      background: var(--accent);
-      color: #fff;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-size: 0.88rem;
+      background: var(--loyal-blue);
+      border-left: 4px solid var(--mango);
+      color: #FFFFFF;
+      padding: 13px 18px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
       box-shadow: var(--shadow);
     }
   </style>
@@ -673,67 +1007,139 @@
 
   <!-- ================= LOGIN SCREEN ================= -->
   <section id="login-screen">
-    <div class="login-card">
-      <div class="brand-mark">
-        <span class="brand-dot">3D</span>
-        <span id="login-brand-name">Studio Catalogus</span>
-      </div>
-      <h1>Klantportaal</h1>
-      <p class="subtitle">Log in om de online catalogus en interactieve 3D-modellen te bekijken.</p>
-
-      <div id="login-error" class="error-msg hidden"></div>
-
-      <form id="login-form">
-        <div class="field">
-          <label for="email">E-mailadres</label>
-          <input id="email" type="email" placeholder="naam@bedrijf.nl" autocomplete="username" required />
-        </div>
-        <div class="field">
-          <label for="password">Wachtwoord</label>
-          <input id="password" type="password" placeholder="••••••••" autocomplete="current-password" required />
-        </div>
-        <button type="submit" class="btn btn-primary">Inloggen</button>
-      </form>
-
-      <div class="demo-box">
+    <div class="login-shell">
+      <div class="login-brand-panel">
         <div>
-          <strong>Demo-account (mockup)</strong>
-          klant@demo.nl / demo123
+          <div class="gohres-logo logo-light">
+            <svg viewBox="0 0 64 56" fill="none" aria-hidden="true">
+              <polygon points="32,2 44,9 32,16 20,9" fill="#9CB3C0"/>
+              <polygon points="20,9 32,16 32,30 20,23" fill="#6F8B9C"/>
+              <polygon points="44,9 44,23 32,30 32,16" fill="#49687A"/>
+              <polygon points="18,19 30,26 18,33 6,26" fill="#B5C8D3"/>
+              <polygon points="6,26 18,33 18,47 6,40" fill="#7D98A8"/>
+              <polygon points="30,26 30,40 18,47 18,33" fill="#587687"/>
+              <polygon points="46,19 58,26 46,33 34,26" fill="#F3972D"/>
+              <polygon points="34,26 46,33 46,47 34,40" fill="#DC821D"/>
+              <polygon points="58,26 58,40 46,47 46,33" fill="#B86914"/>
+            </svg>
+            <div class="logo-text">
+              <span class="logo-name">Gohres</span>
+              <span class="logo-sub">Metaalconstructie B.V. · sinds 1978</span>
+            </div>
+          </div>
+
+          <h1>IJzersterk in kwaliteit.</h1>
+          <p>Welkom in het online 3D-klantportaal van Gohres. Bekijk onze staal-, RVS- en aluminiumcomponenten interactief in 3D en stel direct uw offertemap samen.</p>
+
+          <ul class="login-usps">
+            <li><span class="usp-chevron">▸</span> Vandaag bestellen, morgen leveren</li>
+            <li><span class="usp-chevron">▸</span> Kan niet, bestaat niet</li>
+            <li><span class="usp-chevron">▸</span> VCA* &amp; ISO 9001:2015 gecertificeerd</li>
+          </ul>
         </div>
-        <button type="button" id="fill-demo-btn" class="btn btn-secondary" style="padding: 7px 11px; font-size: 0.8rem;">
-          Invullen
-        </button>
+      </div>
+
+      <div class="login-form-panel">
+        <h2>Inloggen klantportaal</h2>
+        <p class="subtitle">Voer uw inloggegevens in om toegang te krijgen tot de 3D-catalogus.</p>
+
+        <div id="login-error" class="error-msg hidden"></div>
+
+        <form id="login-form">
+          <div class="field">
+            <label for="email">E-mailadres</label>
+            <input id="email" type="email" placeholder="naam@bedrijf.nl" autocomplete="username" required />
+          </div>
+          <div class="field">
+            <label for="password">Wachtwoord</label>
+            <input id="password" type="password" placeholder="••••••••" autocomplete="current-password" required />
+          </div>
+          <button type="submit" class="btn btn-mango" style="width: 100%;">Inloggen</button>
+        </form>
+
+        <div class="demo-box">
+          <div>
+            <strong>Demo-account (mockup)</strong>
+            klant@demo.nl / demo123
+          </div>
+          <button type="button" id="fill-demo-btn" class="btn btn-secondary" style="padding: 7px 12px; font-size: 0.78rem;">
+            Invullen
+          </button>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ================= PORTAL APP ================= -->
   <div id="portal-app" class="hidden">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-usps">
+          <span>Familiebedrijf sinds 1978</span>
+          <span>Vandaag bestellen, morgen leveren</span>
+          <span>Maatwerkoplossingen &amp; conserveren</span>
+        </div>
+        <div>Smidsweg 1b, Klaaswaal · info@gohres.nl</div>
+      </div>
+    </div>
+
     <header>
       <div class="header-inner">
-        <div class="brand-mark" style="margin-bottom: 0;">
-          <span class="brand-dot">3D</span>
-          <span id="header-brand-name">Studio Catalogus</span>
+        <div class="gohres-logo">
+          <svg viewBox="0 0 64 56" fill="none" aria-hidden="true">
+            <polygon points="32,2 44,9 32,16 20,9" fill="#89A2B0"/>
+            <polygon points="20,9 32,16 32,30 20,23" fill="#587687"/>
+            <polygon points="44,9 44,23 32,30 32,16" fill="#00425D"/>
+            <polygon points="18,19 30,26 18,33 6,26" fill="#A1B6C2"/>
+            <polygon points="6,26 18,33 18,47 6,40" fill="#587687"/>
+            <polygon points="30,26 30,40 18,47 18,33" fill="#00425D"/>
+            <polygon points="46,19 58,26 46,33 34,26" fill="#89A2B0"/>
+            <polygon points="34,26 46,33 46,47 34,40" fill="#587687"/>
+            <polygon points="58,26 58,40 46,47 46,33" fill="#00425D"/>
+          </svg>
+          <div class="logo-text">
+            <span class="logo-name">Gohres</span>
+            <span class="logo-sub">Metaalconstructie B.V.</span>
+          </div>
         </div>
 
         <div class="header-actions">
           <span id="user-display" class="user-pill"></span>
-          <button id="open-quote-btn" class="btn btn-secondary" style="padding: 8px 13px;">
-            Offerte <span id="quote-count" class="badge">0</span>
+          <a href="tel:+31186573642" class="phone-chip">+31 (0186) 57 36 42</a>
+          <button id="open-quote-btn" class="btn btn-primary" style="padding: 8px 14px;">
+            Offertemap <span id="quote-count" class="badge">0</span>
           </button>
           <button id="logout-btn" class="btn btn-ghost">Uitloggen</button>
         </div>
       </div>
     </header>
 
-    <main>
-      <div class="catalog-head">
+    <section class="hero-banner">
+      <div class="hero-inner">
         <div>
-          <h2>Online Productcatalogus</h2>
-          <p>Selecteer een product om het interactief in 3D te inspecteren en afwerkingen te vergelijken.</p>
+          <span class="hero-kicker">Online 3D Productcatalogus</span>
+          <h1>IJzersterk in kwaliteit.</h1>
+          <p>Inspecteer onze producten interactief vanuit elke hoek, bekijk verschillende conserveringen live in 3D en voeg artikelen direct toe aan uw offertemap.</p>
+        </div>
+
+        <div class="hero-quick-links">
+          <button type="button" class="hero-quick-item" data-quick-cat="Industrial support">
+            <span>Industrial support</span><span>→</span>
+          </button>
+          <button type="button" class="hero-quick-item" data-quick-cat="Unistrut">
+            <span>Unistrut</span><span>→</span>
+          </button>
+          <button type="button" class="hero-quick-item" data-quick-cat="Pijpbeugels">
+            <span>Pijpbeugels</span><span>→</span>
+          </button>
+          <button type="button" class="hero-quick-item" data-quick-cat="Maatwerkoplossingen">
+            <span>Maatwerkoplossingen</span><span>→</span>
+          </button>
         </div>
       </div>
+    </section>
 
+    <main>
       <div class="controls-bar">
         <div id="category-filters" class="filter-pills"></div>
         <input id="search-input" class="search-input" type="search" placeholder="Zoek op naam of artikelnummer..." />
@@ -741,6 +1147,28 @@
 
       <div id="product-grid" class="grid"></div>
     </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <h4>Gohres Metaalconstructie B.V.</h4>
+          <p>Uw flexibele partner op het gebied van industriële constructies, pipesupporting, plaatbewerking, aluminium &amp; RVS en conserveren.</p>
+          <div class="cert-badges">
+            <span class="cert-badge">VCA* 2017/6.0</span>
+            <span class="cert-badge">ISO 9001:2015</span>
+            <span class="cert-badge">Erkend Leerbedrijf</span>
+          </div>
+        </div>
+        <div>
+          <h4>Assortiment</h4>
+          <p>Industrial support<br/>Unistrut &amp; Marine ladderbaan<br/>Pijpbeugels &amp; Buis-/stafmateriaal<br/>Maatwerkoplossingen</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>Smidsweg 1b<br/>3286 LC Klaaswaal<br/>T. +31 (0186) 57 36 42<br/>E. info@gohres.nl</p>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <!-- ================= 3D VIEWER MODAL ================= -->
@@ -748,10 +1176,10 @@
     <div class="viewer-modal">
       <div class="viewer-stage">
         <div id="three-container"></div>
-        <div class="viewer-hint">Sleep om te draaien · Scroll om te zoomen</div>
+        <div class="viewer-hint">Sleep om te roteren · Scroll om te zoomen</div>
         <div id="viewer-loader" class="viewer-loader hidden">3D-model laden...</div>
         <div class="viewer-toolbar">
-          <button id="btn-autorotate" class="tool-btn active">Auto-rotatie</button>
+          <button id="btn-autorotate" class="tool-btn active">Roteer</button>
           <button id="btn-wireframe" class="tool-btn">Wireframe</button>
           <button id="btn-reset-cam" class="tool-btn">Reset zicht</button>
         </div>
@@ -760,17 +1188,16 @@
       <div class="viewer-details">
         <div class="modal-top">
           <div>
-            <div id="modal-meta" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px;"></div>
+            <div id="modal-meta" style="font-size: 0.82rem; font-weight: 600; color: var(--mango); margin-bottom: 4px; text-transform: uppercase;"></div>
             <h3 id="modal-title" style="font-size: 1.35rem;"></h3>
           </div>
           <button id="close-modal-btn" class="close-btn" aria-label="Sluiten">✕</button>
         </div>
 
-        <div id="modal-price" style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"></div>
-        <p id="modal-desc" style="font-size: 0.9rem; color: var(--text-muted);"></p>
+        <p id="modal-desc" style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;"></p>
 
         <div class="finish-section">
-          <label>Kies afwerking (live in 3D)</label>
+          <label>Conservering / Afwerking (live in 3D)</label>
           <div id="finish-swatches" class="swatches"></div>
         </div>
 
@@ -778,29 +1205,27 @@
 
         <div class="add-row">
           <input id="modal-qty" class="qty-input" type="number" min="1" value="1" />
-          <button id="add-to-quote-btn" class="btn btn-primary">Toevoegen aan offerte</button>
+          <button id="add-to-quote-btn" class="btn btn-mango" style="flex: 1;">+ Voeg toe aan offerte</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ================= QUOTE DRAWER ================= -->
+  <!-- ================= OFFERTEMAP DRAWER ================= -->
   <div id="quote-drawer" class="drawer-backdrop hidden">
     <div class="drawer">
       <div class="drawer-header">
-        <h3>Offerte-aanvraag</h3>
+        <h3>Offertemap</h3>
         <button id="close-drawer-btn" class="close-btn" aria-label="Sluiten">✕</button>
       </div>
       <div id="quote-items" class="drawer-body"></div>
       <div class="drawer-footer">
-        <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 14px;">
-          <span>Indicatie totaal</span>
-          <span id="quote-total">€ 0,00</span>
-        </div>
         <div class="field" style="margin-bottom: 12px;">
-          <textarea id="quote-note" rows="2" placeholder="Optionele projectreferentie of opmerking..."></textarea>
+          <label for="quote-note">Projectreferentie / opmerking</label>
+          <textarea id="quote-note" rows="2" placeholder="Bijv. projectnummer, gewenste leverdatum of conservering..."></textarea>
         </div>
-        <button id="submit-quote-btn" class="btn btn-primary">Mockup offerte versturen</button>
+        <button id="submit-quote-btn" class="btn btn-mango" style="width: 100%; margin-bottom: 8px;">Offerte aanvragen (mockup)</button>
+        <button id="continue-shopping-btn" class="btn btn-secondary" style="width: 100%;">Verder winkelen</button>
       </div>
     </div>
   </div>
@@ -809,10 +1234,10 @@
 
   <script>
     /* ============================================================
-       1. CONFIGURATIE — PAS HIER JE BEDRIJF, ACCOUNTS & PRODUCTEN AAN
+       1. CONFIGURATIE — ACCOUNTS, CONSERVERINGEN & PRODUCTEN
        ============================================================ */
     const PORTAL_CONFIG = {
-      companyName: 'Jouw Merk — Klantportaal',
+      companyName: 'Gohres Metaalconstructie B.V.',
       accounts: [
         { email: 'klant@demo.nl', password: 'demo123', name: 'Demo Klant B.V.' },
         { email: 'Adrie@demo.nl', password: 'demo123', name: 'Demo Adrie' }
@@ -820,63 +1245,73 @@
     };
 
     const FINISHES = [
-      { id: 'original', label: 'Origineel',            isOriginal: true, hex: 'linear-gradient(135deg, #cbd5e1, #334155)' },
-      { id: 'black',    label: 'Mat Zwart',            color: 0x1e2229, metalness: 0.35, roughness: 0.55, hex: '#1e2229' },
-      { id: 'alu',      label: 'Geborsteld Aluminium', color: 0xcbd5e1, metalness: 0.85, roughness: 0.28, hex: '#cbd5e1' },
-      { id: 'brass',    label: 'Warm Messing',         color: 0xc59b49, metalness: 0.88, roughness: 0.24, hex: '#c59b49' },
-      { id: 'white',    label: 'Architectonisch Wit',  color: 0xf1f5f9, metalness: 0.08, roughness: 0.65, hex: '#f1f5f9' }
+      { id: 'original', label: 'Origineel model',         isOriginal: true, hex: 'linear-gradient(135deg, #00425D, #F3972D)' },
+      { id: 'hdg',      label: 'Thermisch verzinkt (HDG)', color: 0xb6c1c9, metalness: 0.78, roughness: 0.36, hex: '#b6c1c9' },
+      { id: 'rvs',      label: 'RVS 316 (Geborsteld)',     color: 0xd6dde2, metalness: 0.90, roughness: 0.24, hex: '#d6dde2' },
+      { id: 'black',    label: 'Poedercoating Zwart',      color: 0x1e2429, metalness: 0.25, roughness: 0.55, hex: '#1e2429' },
+      { id: 'blue',     label: 'Poedercoating Gohres',     color: 0x00425d, metalness: 0.22, roughness: 0.45, hex: '#00425d' }
     ];
 
     /*
       EIGEN 3D-MODELLEN:
       kp004 en kp005 staan hieronder direct gekoppeld aan je map "models/".
-      Let op: bestandsnamen op GitHub zijn hoofdlettergevoelig (bijv. kp004.glb vs KP004.glb).
+      Let op: bestandsnamen op GitHub zijn hoofdlettergevoelig (kp004.glb vs KP004.glb).
     */
     const PRODUCTS = [
       {
         id: 'kp004',
         sku: 'KP004',
-        name: 'Product KP004',
-        category: 'Catalogus',
-        price: 385,
-        description: 'Interactief 3D-model van KP004. Pas deze tekst en specificaties aan in index.html.',
+        name: 'Constructiedeel KP004',
+        category: 'Industrial support',
+        unit: 'per stuk',
+        description: 'Interactief 3D-model KP004 uit het Gohres-assortiment. Bekijk maatvoering en conservering direct in de 3D-viewer.',
         modelUrl: 'models/kp004.glb',
-        fallbackShape: 'lamp',
-        specs: { Artikelnummer: 'KP004', Materiaal: '—', Levertijd: 'Op aanvraag' }
+        fallbackShape: 'flange',
+        specs: { Artikelnummer: 'KP004', Eenheid: 'Per stuk', Conservering: 'Thermisch verzinkt / RVS', Levertijd: 'Op aanvraag' }
       },
       {
         id: 'kp005',
         sku: 'KP005',
-        name: 'Product KP005',
-        category: 'Catalogus',
-        price: 540,
-        description: 'Interactief 3D-model van KP005. Pas deze tekst en specificaties aan in index.html.',
+        name: 'Constructiedeel KP005',
+        category: 'Industrial support',
+        unit: 'per stuk',
+        description: 'Interactief 3D-model KP005 uit het Gohres-assortiment. Roteer en inspecteer alle bevestigingspunten in 3D.',
         modelUrl: 'models/kp005.glb',
-        fallbackShape: 'table',
-        specs: { Artikelnummer: 'KP005', Materiaal: '—', Levertijd: 'Op aanvraag' }
+        fallbackShape: 'bracket',
+        specs: { Artikelnummer: 'KP005', Eenheid: 'Per stuk', Conservering: 'Thermisch verzinkt / RVS', Levertijd: 'Op aanvraag' }
       },
-      /* --- Extra demoproducten (verwijder of vervang gerust door je eigen producten) --- */
       {
         id: 'p3',
-        sku: 'IN-312',
-        name: 'Flens Koppeling Pro (Demo)',
-        category: 'Demo',
-        price: 129,
-        description: 'CNC-gefreesde precisiekoppeling voor modulaire frameconstructies met hoge belasting.',
+        sku: 'HDP2097',
+        name: 'Hoekverbinding 60° 2× gat 14mm HG',
+        category: 'Unistrut',
+        unit: 'per 10',
+        description: 'Zware stalen hoekverbinder geschikt voor industriële montagerails en ondersteuningsconstructies (demo 3D).',
         modelUrl: null,
-        fallbackShape: 'flange',
-        specs: { Tolerantie: '±0,05 mm', Boring: 'Ø 40 mm', Levertijd: 'Uit voorraad' }
+        fallbackShape: 'bracket',
+        specs: { Artikelnummer: 'HDP2097', Eenheid: 'Per 10', Materiaal: 'Thermisch verzinkt staal', Levertijd: 'Uit voorraad' }
       },
       {
         id: 'p4',
-        sku: 'AC-405',
-        name: 'Modulaire Desk Organizer (Demo)',
-        category: 'Demo',
-        price: 95,
-        description: 'Strak vormgegeven bureautray met verwisselbare inzetstukken voor kabels en accessoires.',
+        sku: '171.0042.12',
+        name: 'Lange U-bout 32mm M8',
+        category: 'Pijpbeugels',
+        unit: 'per 100',
+        description: 'Industriële U-bout voor leiding- en pipesupporting in zware omgevingen en scheepsbouw (demo 3D).',
         modelUrl: null,
-        fallbackShape: 'tray',
-        specs: { Afmeting: '280 × 140 × 45 mm', Afwerking: 'Poedercoating', Levertijd: '3 werkdagen' }
+        fallbackShape: 'ubolt',
+        specs: { Artikelnummer: '171.0042.12', Eenheid: 'Per 100', Draad: 'M8', Levertijd: 'Uit voorraad' }
+      },
+      {
+        id: 'p5',
+        sku: 'G0005',
+        name: 'Ceagdoosplaat C HDG',
+        category: 'Maatwerkoplossingen',
+        unit: 'per stuk',
+        description: 'Thermisch verzinkte montageplaat voor elektrotechnische aansluitdozen op kabel- en lichtsupporting (demo 3D).',
+        modelUrl: null,
+        fallbackShape: 'plate',
+        specs: { Artikelnummer: 'G0005', Eenheid: 'Per stuk', Afwerking: 'HDG (Thermisch verzinkt)', Levertijd: 'Uit voorraad' }
       }
     ];
 
@@ -893,16 +1328,13 @@
     const portalApp = document.getElementById('portal-app');
     const loginError = document.getElementById('login-error');
 
-    document.getElementById('login-brand-name').textContent = PORTAL_CONFIG.companyName;
-    document.getElementById('header-brand-name').textContent = PORTAL_CONFIG.companyName;
-
     function saveSession(user) {
-      try { sessionStorage.setItem('portal_user', JSON.stringify(user)); } catch (_) {}
+      try { sessionStorage.setItem('gohres_portal_user', JSON.stringify(user)); } catch (_) {}
     }
 
     function readSession() {
       try {
-        const raw = sessionStorage.getItem('portal_user');
+        const raw = sessionStorage.getItem('gohres_portal_user');
         return raw ? JSON.parse(raw) : null;
       } catch (_) {
         return null;
@@ -910,7 +1342,7 @@
     }
 
     function clearSession() {
-      try { sessionStorage.removeItem('portal_user'); } catch (_) {}
+      try { sessionStorage.removeItem('gohres_portal_user'); } catch (_) {}
     }
 
     function enterPortal(user) {
@@ -956,9 +1388,6 @@
     /* ============================================================
        3. CATALOGUS WEERGAVE
        ============================================================ */
-    const formatPrice = (val) =>
-      new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(val);
-
     function renderFilters() {
       const categories = ['Alles', ...new Set(PRODUCTS.map(p => p.category))];
       const container = document.getElementById('category-filters');
@@ -975,6 +1404,15 @@
         container.appendChild(btn);
       });
     }
+
+    document.querySelectorAll('[data-quick-cat]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeCategory = btn.dataset.quickCat;
+        renderFilters();
+        renderProducts();
+        document.getElementById('product-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
 
     document.getElementById('search-input').addEventListener('input', (e) => {
       searchTerm = e.target.value.toLowerCase();
@@ -993,13 +1431,14 @@
       });
 
       if (!filtered.length) {
-        grid.innerHTML = `<p style="color: var(--text-muted);">Geen producten gevonden voor deze zoekopdracht.</p>`;
+        grid.innerHTML = `<p style="color: var(--text-muted);">Geen artikelen gevonden voor deze selectie.</p>`;
         return;
       }
 
       grid.innerHTML = filtered.map(p => `
         <article class="card">
           <div class="card-visual" data-open="${p.id}">
+            <span class="tag-cat">${p.category}</span>
             <span class="tag-3d">3D VIEW</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z"/>
@@ -1008,17 +1447,14 @@
             </svg>
           </div>
           <div class="card-body">
-            <div class="card-meta">
-              <span>${p.category}</span>
-              <span>${p.sku}</span>
-            </div>
             <h3 class="card-title">${p.name}</h3>
+            <div class="card-sku">
+              Artikelnummer: <strong>${p.sku}</strong> · Eenheid: ${p.unit}
+            </div>
             <p class="card-desc">${p.description}</p>
             <div class="card-footer">
-              <span class="price">${formatPrice(p.price)}</span>
-              <button class="btn btn-secondary" style="padding: 8px 13px; font-size: 0.85rem;" data-open="${p.id}">
-                Bekijk in 3D
-              </button>
+              <button class="btn btn-secondary" data-open="${p.id}">Bekijk in 3D</button>
+              <button class="btn btn-mango" data-quick-add="${p.id}">+ Offerte</button>
             </div>
           </div>
         </article>
@@ -1028,6 +1464,13 @@
         el.addEventListener('click', () => {
           const prod = PRODUCTS.find(item => item.id === el.dataset.open);
           if (prod) openViewerModal(prod);
+        });
+      });
+
+      grid.querySelectorAll('[data-quick-add]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const prod = PRODUCTS.find(item => item.id === btn.dataset.quickAdd);
+          if (prod) addItemToQuote(prod, FINISHES[0].label, 1);
         });
       });
     }
@@ -1083,7 +1526,7 @@
       const pmrem = new THREE.PMREMGenerator(renderer);
       scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
 
-      const keyLight = new THREE.DirectionalLight(0xffffff, 1.4);
+      const keyLight = new THREE.DirectionalLight(0xffffff, 1.45);
       keyLight.position.set(4, 7, 5);
       keyLight.castShadow = true;
       keyLight.shadow.mapSize.set(1024, 1024);
@@ -1091,7 +1534,7 @@
 
       const floor = new THREE.Mesh(
         new THREE.PlaneGeometry(12, 12),
-        new THREE.ShadowMaterial({ opacity: 0.14 })
+        new THREE.ShadowMaterial({ opacity: 0.16 })
       );
       floor.rotation.x = -Math.PI / 2;
       floor.position.y = -0.95;
@@ -1102,7 +1545,7 @@
       controls.enableDamping = true;
       controls.dampingFactor = 0.06;
       controls.autoRotate = true;
-      controls.autoRotateSpeed = 1.6;
+      controls.autoRotateSpeed = 1.5;
       controls.minDistance = 0.8;
       controls.maxDistance = 10;
 
@@ -1126,32 +1569,10 @@
 
     function buildProceduralModel(type, material) {
       const group = new THREE.Group();
-      const accentMat = new THREE.MeshStandardMaterial({
-        color: 0xffffff,
-        emissive: 0xfff4d6,
-        emissiveIntensity: 0.45,
-        roughness: 0.2
-      });
 
-      if (type === 'lamp') {
-        const shade = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 1.05, 0.28, 48, 1, true), material);
-        const topCap = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 0.95, 0.05, 48), material);
-        topCap.position.y = 0.14;
-        const diffuser = new THREE.Mesh(new THREE.CylinderGeometry(0.92, 0.92, 0.04, 48), accentMat);
-        diffuser.position.y = -0.1;
-        const rod = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.9, 16), material);
-        rod.position.y = 0.58;
-        group.add(shade, topCap, diffuser, rod);
-      } else if (type === 'table') {
-        const top = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 0.95, 0.09, 48), material);
-        top.position.y = 0.65;
-        const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.22, 1.3, 32), material);
-        const base = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.58, 0.08, 48), material);
-        base.position.y = -0.65;
-        group.add(top, leg, base);
-      } else if (type === 'flange') {
-        const plate = new THREE.Mesh(new THREE.CylinderGeometry(0.85, 0.85, 0.18, 36), material);
-        const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.5, 0.65, 36), material);
+      if (type === 'flange') {
+        const plate = new THREE.Mesh(new THREE.CylinderGeometry(0.85, 0.85, 0.16, 36), material);
+        const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.48, 0.65, 36), material);
         hub.position.y = 0.35;
         group.add(plate, hub);
         for (let i = 0; i < 6; i++) {
@@ -1160,15 +1581,33 @@
           bolt.position.set(Math.cos(angle) * 0.64, 0.06, Math.sin(angle) * 0.64);
           group.add(bolt);
         }
+      } else if (type === 'bracket') {
+        const base = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.14, 0.7), material);
+        const upright = new THREE.Mesh(new THREE.BoxGeometry(0.14, 1.15, 0.7), material);
+        upright.position.set(-0.63, 0.55, 0);
+        const gusset = new THREE.Mesh(new THREE.BoxGeometry(0.75, 0.75, 0.1), material);
+        gusset.position.set(-0.25, 0.38, 0);
+        gusset.rotation.z = Math.PI / 4;
+        group.add(base, upright, gusset);
+      } else if (type === 'ubolt') {
+        const arch = new THREE.Mesh(new THREE.TorusGeometry(0.55, 0.09, 20, 40, Math.PI), material);
+        arch.position.y = 0.35;
+        const legL = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, 0.95, 20), material);
+        legL.position.set(-0.55, -0.12, 0);
+        const legR = legL.clone();
+        legR.position.x = 0.55;
+        const nutL = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.14, 6), material);
+        nutL.position.set(-0.55, -0.45, 0);
+        const nutR = nutL.clone();
+        nutR.position.x = 0.55;
+        group.add(arch, legL, legR, nutL, nutR);
       } else {
-        const base = new THREE.Mesh(new THREE.BoxGeometry(1.7, 0.12, 0.95), material);
-        const wallBack = new THREE.Mesh(new THREE.BoxGeometry(1.7, 0.28, 0.08), material);
-        wallBack.position.set(0, 0.14, -0.435);
-        const wallFront = wallBack.clone();
-        wallFront.position.z = 0.435;
-        const divider = new THREE.Mesh(new THREE.BoxGeometry(0.07, 0.24, 0.8), material);
-        divider.position.set(-0.25, 0.12, 0);
-        group.add(base, wallBack, wallFront, divider);
+        const plate = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.1, 1.1), material);
+        const lip1 = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.35, 0.1), material);
+        lip1.position.set(0, -0.15, -0.5);
+        const lip2 = lip1.clone();
+        lip2.position.z = 0.5;
+        group.add(plate, lip1, lip2);
       }
 
       group.traverse(obj => {
@@ -1222,9 +1661,8 @@
       currentMeshGroup.traverse(obj => {
         if (!obj.isMesh) return;
         const orig = obj.userData.origMaterial;
-        const isEmissive = orig && !Array.isArray(orig) && orig.emissiveIntensity;
 
-        if (currentFinish.isOriginal || isEmissive) {
+        if (currentFinish.isOriginal) {
           if (orig) obj.material = orig;
           setMaterialWireframe(obj.material, wireframeMode);
         } else {
@@ -1262,7 +1700,7 @@
           (err) => {
             console.error('Kon model niet laden:', product.modelUrl, err);
             loaderEl.classList.add('hidden');
-            showToast(`Kon ${product.modelUrl} niet vinden — placeholder getoond.`);
+            showToast(`Kon ${product.modelUrl} niet vinden — demovorm getoond.`);
             fitAndMountModel(buildProceduralModel(product.fallbackShape, fallbackMat));
           }
         );
@@ -1273,7 +1711,7 @@
     }
 
     /* ============================================================
-       5. MODAL & OFFERTE LOGICA
+       5. MODAL & OFFERTEMAP LOGICA
        ============================================================ */
     const modalBackdrop = document.getElementById('viewer-modal');
 
@@ -1284,9 +1722,8 @@
       document.getElementById('btn-wireframe').classList.remove('active');
       document.getElementById('modal-qty').value = 1;
 
-      document.getElementById('modal-meta').textContent = `${product.category} · ${product.sku}`;
+      document.getElementById('modal-meta').textContent = `${product.category} · Artikelnummer ${product.sku}`;
       document.getElementById('modal-title').textContent = product.name;
-      document.getElementById('modal-price').textContent = formatPrice(product.price);
       document.getElementById('modal-desc').textContent = product.description;
 
       document.getElementById('modal-specs').innerHTML = Object.entries(product.specs)
@@ -1361,15 +1798,31 @@
       setTimeout(() => t.classList.add('hidden'), 3200);
     }
 
+    function addItemToQuote(product, finishLabel, qty) {
+      const existing = quoteCart.find(i => i.id === product.id && i.finish === finishLabel);
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        quoteCart.push({
+          id: product.id,
+          sku: product.sku,
+          name: product.name,
+          unit: product.unit,
+          finish: finishLabel,
+          qty
+        });
+      }
+      updateQuoteUI();
+      showToast(`${product.name} toegevoegd aan uw offertemap.`);
+    }
+
     function updateQuoteUI() {
       const totalQty = quoteCart.reduce((sum, i) => sum + i.qty, 0);
-      const totalPrice = quoteCart.reduce((sum, i) => sum + i.price * i.qty, 0);
       document.getElementById('quote-count').textContent = totalQty;
-      document.getElementById('quote-total').textContent = formatPrice(totalPrice);
 
       const list = document.getElementById('quote-items');
       if (!quoteCart.length) {
-        list.innerHTML = `<p style="color: var(--text-muted); font-size: 0.9rem;">Nog geen producten toegevoegd aan je offerte.</p>`;
+        list.innerHTML = `<p style="color: var(--text-muted); font-size: 0.92rem;">Geen producten in de offertemap.</p>`;
         return;
       }
 
@@ -1377,11 +1830,11 @@
         <div class="quote-item">
           <div>
             <h4>${item.name}</h4>
-            <p>${item.finish} · ${item.qty}× ${formatPrice(item.price)}</p>
+            <p>Art. ${item.sku} · ${item.finish}</p>
+            <p>Aantal: <strong>${item.qty}</strong> (${item.unit})</p>
           </div>
           <div style="text-align: right;">
-            <div style="font-weight: 600; font-size: 0.9rem;">${formatPrice(item.price * item.qty)}</div>
-            <button data-remove="${idx}" style="border:none; background:none; color:var(--danger); font-size:0.78rem; cursor:pointer; margin-top:4px;">Verwijder</button>
+            <button data-remove="${idx}" style="border:none; background:none; color:var(--danger); font-size:0.82rem; font-weight:600; cursor:pointer;">Verwijder</button>
           </div>
         </div>
       `).join('');
@@ -1396,20 +1849,7 @@
 
     document.getElementById('add-to-quote-btn').addEventListener('click', () => {
       const qty = Math.max(1, parseInt(document.getElementById('modal-qty').value, 10) || 1);
-      const existing = quoteCart.find(i => i.id === currentProduct.id && i.finish === currentFinish.label);
-      if (existing) {
-        existing.qty += qty;
-      } else {
-        quoteCart.push({
-          id: currentProduct.id,
-          name: currentProduct.name,
-          price: currentProduct.price,
-          finish: currentFinish.label,
-          qty
-        });
-      }
-      updateQuoteUI();
-      showToast(`${currentProduct.name} (${currentFinish.label}) toegevoegd.`);
+      addItemToQuote(currentProduct, currentFinish.label, qty);
     });
 
     const drawer = document.getElementById('quote-drawer');
@@ -1418,20 +1858,21 @@
       drawer.classList.remove('hidden');
     });
     document.getElementById('close-drawer-btn').addEventListener('click', () => drawer.classList.add('hidden'));
+    document.getElementById('continue-shopping-btn').addEventListener('click', () => drawer.classList.add('hidden'));
     drawer.addEventListener('click', (e) => {
       if (e.target === drawer) drawer.classList.add('hidden');
     });
 
     document.getElementById('submit-quote-btn').addEventListener('click', () => {
       if (!quoteCart.length) {
-        showToast('Voeg eerst een product toe.');
+        showToast('Voeg eerst een product toe aan uw offertemap.');
         return;
       }
       quoteCart = [];
       document.getElementById('quote-note').value = '';
       updateQuoteUI();
       drawer.classList.add('hidden');
-      showToast('Mockup offerte-aanvraag verstuurd!');
+      showToast('Mockup offerte-aanvraag verstuurd naar Gohres!');
     });
 
     const savedUser = readSession();
