@@ -811,7 +811,7 @@
     /* ============================================================
        1. CONFIGURATIE — PAS HIER JE BEDRIJF, ACCOUNTS & PRODUCTEN AAN
        ============================================================ */
-const PORTAL_CONFIG = {
+    const PORTAL_CONFIG = {
       companyName: 'Jouw Merk — Klantportaal',
       accounts: [
         { email: 'klant@demo.nl', password: 'demo123', name: 'Demo Klant B.V.' },
@@ -820,45 +820,47 @@ const PORTAL_CONFIG = {
     };
 
     const FINISHES = [
-      { id: 'black',  label: 'Mat Zwart',           color: 0x1e2229, metalness: 0.35, roughness: 0.55, hex: '#1e2229' },
-      { id: 'alu',    label: 'Geborsteld Aluminium', color: 0xcbd5e1, metalness: 0.85, roughness: 0.28, hex: '#cbd5e1' },
-      { id: 'brass',  label: 'Warm Messing',         color: 0xc59b49, metalness: 0.88, roughness: 0.24, hex: '#c59b49' },
-      { id: 'white',  label: 'Architectonisch Wit',  color: 0xf1f5f9, metalness: 0.08, roughness: 0.65, hex: '#f1f5f9' }
+      { id: 'original', label: 'Origineel',            isOriginal: true, hex: 'linear-gradient(135deg, #cbd5e1, #334155)' },
+      { id: 'black',    label: 'Mat Zwart',            color: 0x1e2229, metalness: 0.35, roughness: 0.55, hex: '#1e2229' },
+      { id: 'alu',      label: 'Geborsteld Aluminium', color: 0xcbd5e1, metalness: 0.85, roughness: 0.28, hex: '#cbd5e1' },
+      { id: 'brass',    label: 'Warm Messing',         color: 0xc59b49, metalness: 0.88, roughness: 0.24, hex: '#c59b49' },
+      { id: 'white',    label: 'Architectonisch Wit',  color: 0xf1f5f9, metalness: 0.08, roughness: 0.65, hex: '#f1f5f9' }
     ];
 
     /*
-      EIGEN 3D-MODEL TOEVOEGEN VIA GITHUB:
-      1. Upload je .glb bestand in een map "models/", bijv. "models/mijn-product.glb".
-      2. Verander modelUrl: null naar modelUrl: 'models/mijn-product.glb'.
+      EIGEN 3D-MODELLEN:
+      kp004 en kp005 staan hieronder direct gekoppeld aan je map "models/".
+      Let op: bestandsnamen op GitHub zijn hoofdlettergevoelig (bijv. kp004.glb vs KP004.glb).
     */
     const PRODUCTS = [
       {
-        id: 'p1',
-        sku: 'VL-104',
-        name: 'Arco Pendelarmatuur',
-        category: 'Verlichting',
+        id: 'kp004',
+        sku: 'KP004',
+        name: 'Product KP004',
+        category: 'Catalogus',
         price: 385,
-        description: 'Minimalistische hanglamp met geïntegreerde LED-ring en verblindingsvrije diffuser.',
-        modelUrl: null,
+        description: 'Interactief 3D-model van KP004. Pas deze tekst en specificaties aan in index.html.',
+        modelUrl: 'models/kp004.glb',
         fallbackShape: 'lamp',
-        specs: { Afmeting: 'Ø 420 × 180 mm', Materiaal: 'Geanodiseerd aluminium', Levertijd: '5 werkdagen' }
+        specs: { Artikelnummer: 'KP004', Materiaal: '—', Levertijd: 'Op aanvraag' }
       },
       {
-        id: 'p2',
-        sku: 'MB-208',
-        name: 'Kube Bijzettafel',
-        category: 'Meubilair',
+        id: 'kp005',
+        sku: 'KP005',
+        name: 'Product KP005',
+        category: 'Catalogus',
         price: 540,
-        description: 'Strakke architectonische bijzettafel met afgerond blad en solide cilindrische kolomvoet.',
-        modelUrl: null,
+        description: 'Interactief 3D-model van KP005. Pas deze tekst en specificaties aan in index.html.',
+        modelUrl: 'models/kp005.glb',
         fallbackShape: 'table',
-        specs: { Afmeting: 'Ø 500 × 520 mm', Gewicht: '14,5 kg', Levertijd: '2 weken' }
+        specs: { Artikelnummer: 'KP005', Materiaal: '—', Levertijd: 'Op aanvraag' }
       },
+      /* --- Extra demoproducten (verwijder of vervang gerust door je eigen producten) --- */
       {
         id: 'p3',
         sku: 'IN-312',
-        name: 'Flens Koppeling Pro',
-        category: 'Industrieel',
+        name: 'Flens Koppeling Pro (Demo)',
+        category: 'Demo',
         price: 129,
         description: 'CNC-gefreesde precisiekoppeling voor modulaire frameconstructies met hoge belasting.',
         modelUrl: null,
@@ -868,35 +870,13 @@ const PORTAL_CONFIG = {
       {
         id: 'p4',
         sku: 'AC-405',
-        name: 'Modulaire Desk Organizer',
-        category: 'Accessoires',
+        name: 'Modulaire Desk Organizer (Demo)',
+        category: 'Demo',
         price: 95,
         description: 'Strak vormgegeven bureautray met verwisselbare inzetstukken voor kabels en accessoires.',
         modelUrl: null,
         fallbackShape: 'tray',
         specs: { Afmeting: '280 × 140 × 45 mm', Afwerking: 'Poedercoating', Levertijd: '3 werkdagen' }
-      },
-      {
-        id: 'p5',
-        sku: 'VL-119',
-        name: 'Halo Wandspot',
-        category: 'Verlichting',
-        price: 215,
-        description: 'Compacte architectonische wandspot met indirect lichteffect voor gangen en showrooms.',
-        modelUrl: null,
-        fallbackShape: 'sconce',
-        specs: { Lichtkleur: '2700K / 3000K', IP-waarde: 'IP44', Levertijd: '5 werkdagen' }
-      },
-      {
-        id: 'p6',
-        sku: 'IN-340',
-        name: 'Koelprofiel Extrusie',
-        category: 'Industrieel',
-        price: 78,
-        description: 'Hoogwaardig thermisch aluminium koelprofiel met optimale luchtstroomgeometrie.',
-        modelUrl: null,
-        fallbackShape: 'heatsink',
-        specs: { Lengte: '250 mm', Legering: 'EN AW-6060', Levertijd: 'Uit voorraad' }
       }
     ];
 
@@ -1053,26 +1033,32 @@ const PORTAL_CONFIG = {
     }
 
     /* ============================================================
-       4. LAZY-LOADED THREE.JS 3D-VIEWER
+       4. LAZY-LOADED THREE.JS 3D-VIEWER (MET DRACO & ORIGINELE KLEUR)
        ============================================================ */
-    let THREE, OrbitControls, GLTFLoader, RoomEnvironment;
+    let THREE, OrbitControls, GLTFLoader, DRACOLoader, RoomEnvironment;
     let scene, camera, renderer, controls, currentMeshGroup, gltfLoader;
     let wireframeMode = false;
     let viewerInitialized = false;
 
     async function loadThreeLibs() {
       if (THREE) return;
-      const [threeMod, orbitMod, gltfMod, envMod] = await Promise.all([
+      const [threeMod, orbitMod, gltfMod, dracoMod, envMod] = await Promise.all([
         import('three'),
         import('three/addons/controls/OrbitControls.js'),
         import('three/addons/loaders/GLTFLoader.js'),
+        import('three/addons/loaders/DRACOLoader.js'),
         import('three/addons/environments/RoomEnvironment.js')
       ]);
       THREE = threeMod;
       OrbitControls = orbitMod.OrbitControls;
       GLTFLoader = gltfMod.GLTFLoader;
+      DRACOLoader = dracoMod.DRACOLoader;
       RoomEnvironment = envMod.RoomEnvironment;
+
       gltfLoader = new GLTFLoader();
+      const dracoLoader = new DRACOLoader();
+      dracoLoader.setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/libs/draco/');
+      gltfLoader.setDRACOLoader(dracoLoader);
     }
 
     async function initThreeViewer() {
@@ -1108,7 +1094,7 @@ const PORTAL_CONFIG = {
         new THREE.ShadowMaterial({ opacity: 0.14 })
       );
       floor.rotation.x = -Math.PI / 2;
-      floor.position.y = -0.9;
+      floor.position.y = -0.95;
       floor.receiveShadow = true;
       scene.add(floor);
 
@@ -1117,8 +1103,8 @@ const PORTAL_CONFIG = {
       controls.dampingFactor = 0.06;
       controls.autoRotate = true;
       controls.autoRotateSpeed = 1.6;
-      controls.minDistance = 1.2;
-      controls.maxDistance = 8;
+      controls.minDistance = 0.8;
+      controls.maxDistance = 10;
 
       const resizeObserver = new ResizeObserver(() => {
         if (!container.clientWidth || !container.clientHeight) return;
@@ -1174,7 +1160,7 @@ const PORTAL_CONFIG = {
           bolt.position.set(Math.cos(angle) * 0.64, 0.06, Math.sin(angle) * 0.64);
           group.add(bolt);
         }
-      } else if (type === 'tray') {
+      } else {
         const base = new THREE.Mesh(new THREE.BoxGeometry(1.7, 0.12, 0.95), material);
         const wallBack = new THREE.Mesh(new THREE.BoxGeometry(1.7, 0.28, 0.08), material);
         wallBack.position.set(0, 0.14, -0.435);
@@ -1183,30 +1169,13 @@ const PORTAL_CONFIG = {
         const divider = new THREE.Mesh(new THREE.BoxGeometry(0.07, 0.24, 0.8), material);
         divider.position.set(-0.25, 0.12, 0);
         group.add(base, wallBack, wallFront, divider);
-      } else if (type === 'sconce') {
-        const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.78, 0.78, 0.12, 48), material);
-        disc.rotation.x = Math.PI / 2;
-        const glow = new THREE.Mesh(new THREE.TorusGeometry(0.7, 0.05, 16, 48), accentMat);
-        glow.position.z = -0.07;
-        const mount = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.32, 0.28, 32), material);
-        mount.rotation.x = Math.PI / 2;
-        mount.position.z = -0.18;
-        group.add(disc, glow, mount);
-      } else {
-        const spine = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.16, 1.1), material);
-        spine.position.y = -0.25;
-        group.add(spine);
-        for (let i = -3; i <= 3; i++) {
-          const fin = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.75, 1.1), material);
-          fin.position.set(i * 0.2, 0.15, 0);
-          group.add(fin);
-        }
       }
 
       group.traverse(obj => {
         if (obj.isMesh) {
           obj.castShadow = true;
           obj.receiveShadow = true;
+          obj.userData.origMaterial = obj.material;
         }
       });
       return group;
@@ -1230,49 +1199,76 @@ const PORTAL_CONFIG = {
       applyFinishToCurrentModel();
     }
 
+    function setMaterialWireframe(mat, enabled) {
+      if (Array.isArray(mat)) {
+        mat.forEach(m => { if (m && 'wireframe' in m) m.wireframe = enabled; });
+      } else if (mat && 'wireframe' in mat) {
+        mat.wireframe = enabled;
+      }
+    }
+
     function applyFinishToCurrentModel() {
-      if (!currentMeshGroup) return;
+      if (!currentMeshGroup || !THREE) return;
+
+      const overrideMat = currentFinish.isOriginal
+        ? null
+        : new THREE.MeshStandardMaterial({
+            color: currentFinish.color,
+            metalness: currentFinish.metalness,
+            roughness: currentFinish.roughness,
+            wireframe: wireframeMode
+          });
+
       currentMeshGroup.traverse(obj => {
-        if (obj.isMesh && obj.material) {
-          if (!obj.material.emissiveIntensity) {
-            obj.material.color.setHex(currentFinish.color);
-            obj.material.metalness = currentFinish.metalness;
-            obj.material.roughness = currentFinish.roughness;
-          }
-          obj.material.wireframe = wireframeMode;
+        if (!obj.isMesh) return;
+        const orig = obj.userData.origMaterial;
+        const isEmissive = orig && !Array.isArray(orig) && orig.emissiveIntensity;
+
+        if (currentFinish.isOriginal || isEmissive) {
+          if (orig) obj.material = orig;
+          setMaterialWireframe(obj.material, wireframeMode);
+        } else {
+          obj.material = overrideMat;
         }
       });
     }
 
     function loadProduct3D(product) {
       const loaderEl = document.getElementById('viewer-loader');
-      const baseMat = new THREE.MeshStandardMaterial({
-        color: currentFinish.color,
-        metalness: currentFinish.metalness,
-        roughness: currentFinish.roughness
+      const fallbackMat = new THREE.MeshStandardMaterial({
+        color: FINISHES[1].color,
+        metalness: FINISHES[1].metalness,
+        roughness: FINISHES[1].roughness
       });
 
       if (product.modelUrl) {
-        loaderEl.textContent = '3D-model laden...';
+        loaderEl.textContent = `3D-model laden (${product.modelUrl})...`;
         loaderEl.classList.remove('hidden');
+
         gltfLoader.load(
           product.modelUrl,
           (gltf) => {
             loaderEl.classList.add('hidden');
             gltf.scene.traverse(n => {
-              if (n.isMesh) { n.castShadow = true; n.receiveShadow = true; }
+              if (n.isMesh) {
+                n.castShadow = true;
+                n.receiveShadow = true;
+                n.userData.origMaterial = n.material;
+              }
             });
             fitAndMountModel(gltf.scene);
           },
           undefined,
-          () => {
+          (err) => {
+            console.error('Kon model niet laden:', product.modelUrl, err);
             loaderEl.classList.add('hidden');
-            fitAndMountModel(buildProceduralModel(product.fallbackShape, baseMat));
+            showToast(`Kon ${product.modelUrl} niet vinden — placeholder getoond.`);
+            fitAndMountModel(buildProceduralModel(product.fallbackShape, fallbackMat));
           }
         );
       } else {
         loaderEl.classList.add('hidden');
-        fitAndMountModel(buildProceduralModel(product.fallbackShape, baseMat));
+        fitAndMountModel(buildProceduralModel(product.fallbackShape, fallbackMat));
       }
     }
 
@@ -1283,7 +1279,7 @@ const PORTAL_CONFIG = {
 
     async function openViewerModal(product) {
       currentProduct = product;
-      currentFinish = FINISHES[0];
+      currentFinish = product.modelUrl ? FINISHES[0] : FINISHES[1];
       wireframeMode = false;
       document.getElementById('btn-wireframe').classList.remove('active');
       document.getElementById('modal-qty').value = 1;
@@ -1310,7 +1306,7 @@ const PORTAL_CONFIG = {
         loadProduct3D(product);
       } catch (err) {
         console.error('3D viewer error:', err);
-        loaderEl.textContent = 'Kon de 3D-viewer niet laden. Zorg voor een actieve internetverbinding of open via GitHub Pages (https).';
+        loaderEl.textContent = 'Kon de 3D-viewer niet laden. Open de site via GitHub Pages (https) met een actieve internetverbinding.';
       }
     }
 
@@ -1362,7 +1358,7 @@ const PORTAL_CONFIG = {
       const t = document.getElementById('toast');
       t.textContent = msg;
       t.classList.remove('hidden');
-      setTimeout(() => t.classList.add('hidden'), 2800);
+      setTimeout(() => t.classList.add('hidden'), 3200);
     }
 
     function updateQuoteUI() {
