@@ -57,4 +57,1388 @@
       display: grid;
       place-items: center;
       padding: 24px;
-      background: radial-gradient(circle at top right, #e2e8f0 0%, #
+      background: radial-gradient(circle at top right, #e2e8f0 0%, #f8fafc 55%);
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 420px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .brand-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .login-card h1 {
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .login-card p.subtitle {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .field { margin-bottom: 16px; }
+
+    .field label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .field input, .field textarea {
+      width: 100%;
+      padding: 11px 13px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--surface);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .field input:focus, .field textarea:focus { border-color: var(--brand); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 16px;
+      border-radius: 9px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      width: 100%;
+    }
+
+    .btn-primary:hover { background: var(--accent-hover); }
+
+    .btn-secondary {
+      background: var(--surface);
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover { background: var(--surface-muted); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-muted);
+      padding: 8px 12px;
+    }
+
+    .btn-ghost:hover {
+      background: var(--surface-muted);
+      color: var(--text);
+    }
+
+    .demo-box {
+      margin-top: 20px;
+      padding: 14px;
+      border-radius: 10px;
+      background: var(--surface-muted);
+      border: 1px dashed #cbd5e1;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .demo-box strong { color: var(--text); display: block; margin-bottom: 2px; }
+
+    .error-msg {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #fef2f2;
+      color: var(--danger);
+      font-size: 0.85rem;
+      border: 1px solid #fecaca;
+    }
+
+    /* ================= PORTAL HEADER ================= */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .user-pill {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: var(--surface-muted);
+      padding: 7px 12px;
+      border-radius: 999px;
+    }
+
+    .badge {
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    /* ================= CATALOG ================= */
+    main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    .catalog-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .catalog-head h2 {
+      font-size: 1.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .catalog-head p {
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .pill.active, .pill:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .search-input {
+      width: 280px;
+      max-width: 100%;
+      padding: 9px 14px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--surface);
+      outline: none;
+    }
+
+    .search-input:focus { border-color: var(--brand); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .card-visual {
+      height: 180px;
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      position: relative;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+
+    .card-visual .tag-3d {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(15, 23, 42, 0.82);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+    }
+
+    .card-visual svg {
+      width: 64px;
+      height: 64px;
+      color: #334155;
+      opacity: 0.85;
+    }
+
+    .card-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    /* ================= 3D VIEWER MODAL ================= */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(4px);
+      display: grid;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .viewer-modal {
+      width: 100%;
+      max-width: 1120px;
+      height: min(86vh, 720px);
+      background: var(--surface);
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 860px) {
+      .viewer-modal {
+        grid-template-columns: 1fr;
+        grid-template-rows: 340px 1fr;
+        height: 92vh;
+      }
+    }
+
+    .viewer-stage {
+      position: relative;
+      background: radial-gradient(circle at center, #ffffff 0%, #e2e8f0 100%);
+      overflow: hidden;
+    }
+
+    #three-container {
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+    }
+
+    #three-container:active { cursor: grabbing; }
+
+    .viewer-hint {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--border);
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .viewer-toolbar {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--border);
+      padding: 6px;
+      border-radius: 999px;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+    }
+
+    .tool-btn {
+      border: none;
+      background: transparent;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .tool-btn.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .viewer-loader {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 24px;
+      background: rgba(248, 250, 252, 0.88);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .viewer-details {
+      padding: 26px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--border);
+    }
+
+    .modal-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .close-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: grid;
+      place-items: center;
+    }
+
+    .close-btn:hover { background: var(--surface-muted); }
+
+    .finish-section { margin: 18px 0; }
+
+    .finish-section label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .swatches {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .swatch {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 11px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      font-size: 0.82rem;
+      cursor: pointer;
+    }
+
+    .swatch.active {
+      border-color: var(--brand);
+      background: var(--brand-soft);
+      font-weight: 600;
+    }
+
+    .swatch-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .specs-list {
+      margin: 14px 0 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.86rem;
+    }
+
+    .spec-row span:first-child { color: var(--text-muted); }
+    .spec-row span:last-child { font-weight: 500; }
+
+    .add-row {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .qty-input {
+      width: 72px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      text-align: center;
+    }
+
+    /* ================= QUOTE DRAWER ================= */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      background: rgba(15, 23, 42, 0.5);
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .drawer {
+      width: 100%;
+      max-width: 420px;
+      height: 100%;
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .drawer-header, .drawer-footer {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .drawer-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px;
+    }
+
+    .drawer-footer {
+      border-top: 1px solid var(--border);
+      border-bottom: none;
+    }
+
+    .quote-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .quote-item h4 { font-size: 0.94rem; }
+    .quote-item p { font-size: 0.8rem; color: var(--text-muted); }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 80;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      box-shadow: var(--shadow);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= LOGIN SCREEN ================= -->
+  <section id="login-screen">
+    <div class="login-card">
+      <div class="brand-mark">
+        <span class="brand-dot">3D</span>
+        <span id="login-brand-name">Studio Catalogus</span>
+      </div>
+      <h1>Klantportaal</h1>
+      <p class="subtitle">Log in om de online catalogus en interactieve 3D-modellen te bekijken.</p>
+
+      <div id="login-error" class="error-msg hidden"></div>
+
+      <form id="login-form">
+        <div class="field">
+          <label for="email">E-mailadres</label>
+          <input id="email" type="email" placeholder="naam@bedrijf.nl" autocomplete="username" required />
+        </div>
+        <div class="field">
+          <label for="password">Wachtwoord</label>
+          <input id="password" type="password" placeholder="••••••••" autocomplete="current-password" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Inloggen</button>
+      </form>
+
+      <div class="demo-box">
+        <div>
+          <strong>Demo-account (mockup)</strong>
+          klant@demo.nl / demo123
+        </div>
+        <button type="button" id="fill-demo-btn" class="btn btn-secondary" style="padding: 7px 11px; font-size: 0.8rem;">
+          Invullen
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PORTAL APP ================= -->
+  <div id="portal-app" class="hidden">
+    <header>
+      <div class="header-inner">
+        <div class="brand-mark" style="margin-bottom: 0;">
+          <span class="brand-dot">3D</span>
+          <span id="header-brand-name">Studio Catalogus</span>
+        </div>
+
+        <div class="header-actions">
+          <span id="user-display" class="user-pill"></span>
+          <button id="open-quote-btn" class="btn btn-secondary" style="padding: 8px 13px;">
+            Offerte <span id="quote-count" class="badge">0</span>
+          </button>
+          <button id="logout-btn" class="btn btn-ghost">Uitloggen</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="catalog-head">
+        <div>
+          <h2>Online Productcatalogus</h2>
+          <p>Selecteer een product om het interactief in 3D te inspecteren en afwerkingen te vergelijken.</p>
+        </div>
+      </div>
+
+      <div class="controls-bar">
+        <div id="category-filters" class="filter-pills"></div>
+        <input id="search-input" class="search-input" type="search" placeholder="Zoek op naam of artikelnummer..." />
+      </div>
+
+      <div id="product-grid" class="grid"></div>
+    </main>
+  </div>
+
+  <!-- ================= 3D VIEWER MODAL ================= -->
+  <div id="viewer-modal" class="modal-backdrop hidden">
+    <div class="viewer-modal">
+      <div class="viewer-stage">
+        <div id="three-container"></div>
+        <div class="viewer-hint">Sleep om te draaien · Scroll om te zoomen</div>
+        <div id="viewer-loader" class="viewer-loader hidden">3D-model laden...</div>
+        <div class="viewer-toolbar">
+          <button id="btn-autorotate" class="tool-btn active">Auto-rotatie</button>
+          <button id="btn-wireframe" class="tool-btn">Wireframe</button>
+          <button id="btn-reset-cam" class="tool-btn">Reset zicht</button>
+        </div>
+      </div>
+
+      <div class="viewer-details">
+        <div class="modal-top">
+          <div>
+            <div id="modal-meta" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px;"></div>
+            <h3 id="modal-title" style="font-size: 1.35rem;"></h3>
+          </div>
+          <button id="close-modal-btn" class="close-btn" aria-label="Sluiten">✕</button>
+        </div>
+
+        <div id="modal-price" style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"></div>
+        <p id="modal-desc" style="font-size: 0.9rem; color: var(--text-muted);"></p>
+
+        <div class="finish-section">
+          <label>Kies afwerking (live in 3D)</label>
+          <div id="finish-swatches" class="swatches"></div>
+        </div>
+
+        <div id="modal-specs" class="specs-list"></div>
+
+        <div class="add-row">
+          <input id="modal-qty" class="qty-input" type="number" min="1" value="1" />
+          <button id="add-to-quote-btn" class="btn btn-primary">Toevoegen aan offerte</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= QUOTE DRAWER ================= -->
+  <div id="quote-drawer" class="drawer-backdrop hidden">
+    <div class="drawer">
+      <div class="drawer-header">
+        <h3>Offerte-aanvraag</h3>
+        <button id="close-drawer-btn" class="close-btn" aria-label="Sluiten">✕</button>
+      </div>
+      <div id="quote-items" class="drawer-body"></div>
+      <div class="drawer-footer">
+        <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 14px;">
+          <span>Indicatie totaal</span>
+          <span id="quote-total">€ 0,00</span>
+        </div>
+        <div class="field" style="margin-bottom: 12px;">
+          <textarea id="quote-note" rows="2" placeholder="Optionele projectreferentie of opmerking..."></textarea>
+        </div>
+        <button id="submit-quote-btn" class="btn btn-primary">Mockup offerte versturen</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script>
+    /* ============================================================
+       1. CONFIGURATIE — PAS HIER JE BEDRIJF, ACCOUNTS & PRODUCTEN AAN
+       ============================================================ */
+    const PORTAL_CONFIG = {
+      companyName: 'Jouw Merk — Klantportaal',
+      accounts: [
+        { email: 'klant@demo.nl', password: 'demo123', name: 'Demo Klant B.V.' }
+      ]
+    };
+
+    const FINISHES = [
+      { id: 'black',  label: 'Mat Zwart',           color: 0x1e2229, metalness: 0.35, roughness: 0.55, hex: '#1e2229' },
+      { id: 'alu',    label: 'Geborsteld Aluminium', color: 0xcbd5e1, metalness: 0.85, roughness: 0.28, hex: '#cbd5e1' },
+      { id: 'brass',  label: 'Warm Messing',         color: 0xc59b49, metalness: 0.88, roughness: 0.24, hex: '#c59b49' },
+      { id: 'white',  label: 'Architectonisch Wit',  color: 0xf1f5f9, metalness: 0.08, roughness: 0.65, hex: '#f1f5f9' }
+    ];
+
+    /*
+      EIGEN 3D-MODEL TOEVOEGEN VIA GITHUB:
+      1. Upload je .glb bestand in een map "models/", bijv. "models/mijn-product.glb".
+      2. Verander modelUrl: null naar modelUrl: 'models/mijn-product.glb'.
+    */
+    const PRODUCTS = [
+      {
+        id: 'p1',
+        sku: 'VL-104',
+        name: 'Arco Pendelarmatuur',
+        category: 'Verlichting',
+        price: 385,
+        description: 'Minimalistische hanglamp met geïntegreerde LED-ring en verblindingsvrije diffuser.',
+        modelUrl: null,
+        fallbackShape: 'lamp',
+        specs: { Afmeting: 'Ø 420 × 180 mm', Materiaal: 'Geanodiseerd aluminium', Levertijd: '5 werkdagen' }
+      },
+      {
+        id: 'p2',
+        sku: 'MB-208',
+        name: 'Kube Bijzettafel',
+        category: 'Meubilair',
+        price: 540,
+        description: 'Strakke architectonische bijzettafel met afgerond blad en solide cilindrische kolomvoet.',
+        modelUrl: null,
+        fallbackShape: 'table',
+        specs: { Afmeting: 'Ø 500 × 520 mm', Gewicht: '14,5 kg', Levertijd: '2 weken' }
+      },
+      {
+        id: 'p3',
+        sku: 'IN-312',
+        name: 'Flens Koppeling Pro',
+        category: 'Industrieel',
+        price: 129,
+        description: 'CNC-gefreesde precisiekoppeling voor modulaire frameconstructies met hoge belasting.',
+        modelUrl: null,
+        fallbackShape: 'flange',
+        specs: { Tolerantie: '±0,05 mm', Boring: 'Ø 40 mm', Levertijd: 'Uit voorraad' }
+      },
+      {
+        id: 'p4',
+        sku: 'AC-405',
+        name: 'Modulaire Desk Organizer',
+        category: 'Accessoires',
+        price: 95,
+        description: 'Strak vormgegeven bureautray met verwisselbare inzetstukken voor kabels en accessoires.',
+        modelUrl: null,
+        fallbackShape: 'tray',
+        specs: { Afmeting: '280 × 140 × 45 mm', Afwerking: 'Poedercoating', Levertijd: '3 werkdagen' }
+      },
+      {
+        id: 'p5',
+        sku: 'VL-119',
+        name: 'Halo Wandspot',
+        category: 'Verlichting',
+        price: 215,
+        description: 'Compacte architectonische wandspot met indirect lichteffect voor gangen en showrooms.',
+        modelUrl: null,
+        fallbackShape: 'sconce',
+        specs: { Lichtkleur: '2700K / 3000K', IP-waarde: 'IP44', Levertijd: '5 werkdagen' }
+      },
+      {
+        id: 'p6',
+        sku: 'IN-340',
+        name: 'Koelprofiel Extrusie',
+        category: 'Industrieel',
+        price: 78,
+        description: 'Hoogwaardig thermisch aluminium koelprofiel met optimale luchtstroomgeometrie.',
+        modelUrl: null,
+        fallbackShape: 'heatsink',
+        specs: { Lengte: '250 mm', Legering: 'EN AW-6060', Levertijd: 'Uit voorraad' }
+      }
+    ];
+
+    /* ============================================================
+       2. STATE & VEILIGE MOCKUP AUTH (GEEN EXTERNE AFHANKELIJKHEDEN)
+       ============================================================ */
+    let activeCategory = 'Alles';
+    let searchTerm = '';
+    let currentProduct = null;
+    let currentFinish = FINISHES[0];
+    let quoteCart = [];
+
+    const loginScreen = document.getElementById('login-screen');
+    const portalApp = document.getElementById('portal-app');
+    const loginError = document.getElementById('login-error');
+
+    document.getElementById('login-brand-name').textContent = PORTAL_CONFIG.companyName;
+    document.getElementById('header-brand-name').textContent = PORTAL_CONFIG.companyName;
+
+    function saveSession(user) {
+      try { sessionStorage.setItem('portal_user', JSON.stringify(user)); } catch (_) {}
+    }
+
+    function readSession() {
+      try {
+        const raw = sessionStorage.getItem('portal_user');
+        return raw ? JSON.parse(raw) : null;
+      } catch (_) {
+        return null;
+      }
+    }
+
+    function clearSession() {
+      try { sessionStorage.removeItem('portal_user'); } catch (_) {}
+    }
+
+    function enterPortal(user) {
+      document.getElementById('user-display').textContent = user.name;
+      loginScreen.classList.add('hidden');
+      portalApp.classList.remove('hidden');
+      renderFilters();
+      renderProducts();
+    }
+
+    document.getElementById('fill-demo-btn').addEventListener('click', () => {
+      document.getElementById('email').value = PORTAL_CONFIG.accounts[0].email;
+      document.getElementById('password').value = PORTAL_CONFIG.accounts[0].password;
+      loginError.classList.add('hidden');
+    });
+
+    document.getElementById('login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim().toLowerCase();
+      const password = document.getElementById('password').value.trim();
+
+      const match = PORTAL_CONFIG.accounts.find(
+        acc => acc.email.toLowerCase() === email && acc.password === password
+      );
+
+      if (!match) {
+        loginError.textContent = 'Onjuiste inloggegevens. Gebruik klant@demo.nl / demo123 (of klik op Invullen).';
+        loginError.classList.remove('hidden');
+        return;
+      }
+
+      loginError.classList.add('hidden');
+      saveSession(match);
+      enterPortal(match);
+    });
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      clearSession();
+      portalApp.classList.add('hidden');
+      loginScreen.classList.remove('hidden');
+    });
+
+    /* ============================================================
+       3. CATALOGUS WEERGAVE
+       ============================================================ */
+    const formatPrice = (val) =>
+      new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(val);
+
+    function renderFilters() {
+      const categories = ['Alles', ...new Set(PRODUCTS.map(p => p.category))];
+      const container = document.getElementById('category-filters');
+      container.innerHTML = '';
+      categories.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = `pill ${cat === activeCategory ? 'active' : ''}`;
+        btn.textContent = cat;
+        btn.addEventListener('click', () => {
+          activeCategory = cat;
+          renderFilters();
+          renderProducts();
+        });
+        container.appendChild(btn);
+      });
+    }
+
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      searchTerm = e.target.value.toLowerCase();
+      renderProducts();
+    });
+
+    function renderProducts() {
+      const grid = document.getElementById('product-grid');
+      const filtered = PRODUCTS.filter(p => {
+        const matchCat = activeCategory === 'Alles' || p.category === activeCategory;
+        const matchSearch =
+          p.name.toLowerCase().includes(searchTerm) ||
+          p.sku.toLowerCase().includes(searchTerm) ||
+          p.description.toLowerCase().includes(searchTerm);
+        return matchCat && matchSearch;
+      });
+
+      if (!filtered.length) {
+        grid.innerHTML = `<p style="color: var(--text-muted);">Geen producten gevonden voor deze zoekopdracht.</p>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => `
+        <article class="card">
+          <div class="card-visual" data-open="${p.id}">
+            <span class="tag-3d">3D VIEW</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z"/>
+              <path d="M3 7l9 5 9-5"/>
+              <path d="M12 22V12"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span>${p.category}</span>
+              <span>${p.sku}</span>
+            </div>
+            <h3 class="card-title">${p.name}</h3>
+            <p class="card-desc">${p.description}</p>
+            <div class="card-footer">
+              <span class="price">${formatPrice(p.price)}</span>
+              <button class="btn btn-secondary" style="padding: 8px 13px; font-size: 0.85rem;" data-open="${p.id}">
+                Bekijk in 3D
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+
+      grid.querySelectorAll('[data-open]').forEach(el => {
+        el.addEventListener('click', () => {
+          const prod = PRODUCTS.find(item => item.id === el.dataset.open);
+          if (prod) openViewerModal(prod);
+        });
+      });
+    }
+
+    /* ============================================================
+       4. LAZY-LOADED THREE.JS 3D-VIEWER
+       ============================================================ */
+    let THREE, OrbitControls, GLTFLoader, RoomEnvironment;
+    let scene, camera, renderer, controls, currentMeshGroup, gltfLoader;
+    let wireframeMode = false;
+    let viewerInitialized = false;
+
+    async function loadThreeLibs() {
+      if (THREE) return;
+      const [threeMod, orbitMod, gltfMod, envMod] = await Promise.all([
+        import('three'),
+        import('three/addons/controls/OrbitControls.js'),
+        import('three/addons/loaders/GLTFLoader.js'),
+        import('three/addons/environments/RoomEnvironment.js')
+      ]);
+      THREE = threeMod;
+      OrbitControls = orbitMod.OrbitControls;
+      GLTFLoader = gltfMod.GLTFLoader;
+      RoomEnvironment = envMod.RoomEnvironment;
+      gltfLoader = new GLTFLoader();
+    }
+
+    async function initThreeViewer() {
+      await loadThreeLibs();
+      if (viewerInitialized) return;
+
+      const container = document.getElementById('three-container');
+      scene = new THREE.Scene();
+
+      camera = new THREE.PerspectiveCamera(42, container.clientWidth / container.clientHeight, 0.1, 100);
+      camera.position.set(2.8, 2.0, 3.2);
+
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.05;
+      container.appendChild(renderer.domElement);
+
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+
+      const keyLight = new THREE.DirectionalLight(0xffffff, 1.4);
+      keyLight.position.set(4, 7, 5);
+      keyLight.castShadow = true;
+      keyLight.shadow.mapSize.set(1024, 1024);
+      scene.add(keyLight);
+
+      const floor = new THREE.Mesh(
+        new THREE.PlaneGeometry(12, 12),
+        new THREE.ShadowMaterial({ opacity: 0.14 })
+      );
+      floor.rotation.x = -Math.PI / 2;
+      floor.position.y = -0.9;
+      floor.receiveShadow = true;
+      scene.add(floor);
+
+      controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.06;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 1.6;
+      controls.minDistance = 1.2;
+      controls.maxDistance = 8;
+
+      const resizeObserver = new ResizeObserver(() => {
+        if (!container.clientWidth || !container.clientHeight) return;
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+      resizeObserver.observe(container);
+
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      viewerInitialized = true;
+    }
+
+    function buildProceduralModel(type, material) {
+      const group = new THREE.Group();
+      const accentMat = new THREE.MeshStandardMaterial({
+        color: 0xffffff,
+        emissive: 0xfff4d6,
+        emissiveIntensity: 0.45,
+        roughness: 0.2
+      });
+
+      if (type === 'lamp') {
+        const shade = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 1.05, 0.28, 48, 1, true), material);
+        const topCap = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 0.95, 0.05, 48), material);
+        topCap.position.y = 0.14;
+        const diffuser = new THREE.Mesh(new THREE.CylinderGeometry(0.92, 0.92, 0.04, 48), accentMat);
+        diffuser.position.y = -0.1;
+        const rod = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.9, 16), material);
+        rod.position.y = 0.58;
+        group.add(shade, topCap, diffuser, rod);
+      } else if (type === 'table') {
+        const top = new THREE.Mesh(new THREE.CylinderGeometry(0.95, 0.95, 0.09, 48), material);
+        top.position.y = 0.65;
+        const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.22, 1.3, 32), material);
+        const base = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.58, 0.08, 48), material);
+        base.position.y = -0.65;
+        group.add(top, leg, base);
+      } else if (type === 'flange') {
+        const plate = new THREE.Mesh(new THREE.CylinderGeometry(0.85, 0.85, 0.18, 36), material);
+        const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.5, 0.65, 36), material);
+        hub.position.y = 0.35;
+        group.add(plate, hub);
+        for (let i = 0; i < 6; i++) {
+          const angle = (i / 6) * Math.PI * 2;
+          const bolt = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.24, 6), material);
+          bolt.position.set(Math.cos(angle) * 0.64, 0.06, Math.sin(angle) * 0.64);
+          group.add(bolt);
+        }
+      } else if (type === 'tray') {
+        const base = new THREE.Mesh(new THREE.BoxGeometry(1.7, 0.12, 0.95), material);
+        const wallBack = new THREE.Mesh(new THREE.BoxGeometry(1.7, 0.28, 0.08), material);
+        wallBack.position.set(0, 0.14, -0.435);
+        const wallFront = wallBack.clone();
+        wallFront.position.z = 0.435;
+        const divider = new THREE.Mesh(new THREE.BoxGeometry(0.07, 0.24, 0.8), material);
+        divider.position.set(-0.25, 0.12, 0);
+        group.add(base, wallBack, wallFront, divider);
+      } else if (type === 'sconce') {
+        const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.78, 0.78, 0.12, 48), material);
+        disc.rotation.x = Math.PI / 2;
+        const glow = new THREE.Mesh(new THREE.TorusGeometry(0.7, 0.05, 16, 48), accentMat);
+        glow.position.z = -0.07;
+        const mount = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.32, 0.28, 32), material);
+        mount.rotation.x = Math.PI / 2;
+        mount.position.z = -0.18;
+        group.add(disc, glow, mount);
+      } else {
+        const spine = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.16, 1.1), material);
+        spine.position.y = -0.25;
+        group.add(spine);
+        for (let i = -3; i <= 3; i++) {
+          const fin = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.75, 1.1), material);
+          fin.position.set(i * 0.2, 0.15, 0);
+          group.add(fin);
+        }
+      }
+
+      group.traverse(obj => {
+        if (obj.isMesh) {
+          obj.castShadow = true;
+          obj.receiveShadow = true;
+        }
+      });
+      return group;
+    }
+
+    function fitAndMountModel(object) {
+      if (currentMeshGroup) scene.remove(currentMeshGroup);
+
+      const box = new THREE.Box3().setFromObject(object);
+      const size = box.getSize(new THREE.Vector3());
+      const center = box.getCenter(new THREE.Vector3());
+      const maxDim = Math.max(size.x, size.y, size.z) || 1;
+      const scale = 1.9 / maxDim;
+
+      object.scale.setScalar(scale);
+      object.position.sub(center.multiplyScalar(scale));
+
+      currentMeshGroup = new THREE.Group();
+      currentMeshGroup.add(object);
+      scene.add(currentMeshGroup);
+      applyFinishToCurrentModel();
+    }
+
+    function applyFinishToCurrentModel() {
+      if (!currentMeshGroup) return;
+      currentMeshGroup.traverse(obj => {
+        if (obj.isMesh && obj.material) {
+          if (!obj.material.emissiveIntensity) {
+            obj.material.color.setHex(currentFinish.color);
+            obj.material.metalness = currentFinish.metalness;
+            obj.material.roughness = currentFinish.roughness;
+          }
+          obj.material.wireframe = wireframeMode;
+        }
+      });
+    }
+
+    function loadProduct3D(product) {
+      const loaderEl = document.getElementById('viewer-loader');
+      const baseMat = new THREE.MeshStandardMaterial({
+        color: currentFinish.color,
+        metalness: currentFinish.metalness,
+        roughness: currentFinish.roughness
+      });
+
+      if (product.modelUrl) {
+        loaderEl.textContent = '3D-model laden...';
+        loaderEl.classList.remove('hidden');
+        gltfLoader.load(
+          product.modelUrl,
+          (gltf) => {
+            loaderEl.classList.add('hidden');
+            gltf.scene.traverse(n => {
+              if (n.isMesh) { n.castShadow = true; n.receiveShadow = true; }
+            });
+            fitAndMountModel(gltf.scene);
+          },
+          undefined,
+          () => {
+            loaderEl.classList.add('hidden');
+            fitAndMountModel(buildProceduralModel(product.fallbackShape, baseMat));
+          }
+        );
+      } else {
+        loaderEl.classList.add('hidden');
+        fitAndMountModel(buildProceduralModel(product.fallbackShape, baseMat));
+      }
+    }
+
+    /* ============================================================
+       5. MODAL & OFFERTE LOGICA
+       ============================================================ */
+    const modalBackdrop = document.getElementById('viewer-modal');
+
+    async function openViewerModal(product) {
+      currentProduct = product;
+      currentFinish = FINISHES[0];
+      wireframeMode = false;
+      document.getElementById('btn-wireframe').classList.remove('active');
+      document.getElementById('modal-qty').value = 1;
+
+      document.getElementById('modal-meta').textContent = `${product.category} · ${product.sku}`;
+      document.getElementById('modal-title').textContent = product.name;
+      document.getElementById('modal-price').textContent = formatPrice(product.price);
+      document.getElementById('modal-desc').textContent = product.description;
+
+      document.getElementById('modal-specs').innerHTML = Object.entries(product.specs)
+        .map(([k, v]) => `<div class="spec-row"><span>${k}</span><span>${v}</span></div>`)
+        .join('');
+
+      renderSwatches();
+      modalBackdrop.classList.remove('hidden');
+
+      const loaderEl = document.getElementById('viewer-loader');
+      loaderEl.textContent = '3D-viewer initialiseren...';
+      loaderEl.classList.remove('hidden');
+
+      try {
+        await initThreeViewer();
+        resetCamera();
+        loadProduct3D(product);
+      } catch (err) {
+        console.error('3D viewer error:', err);
+        loaderEl.textContent = 'Kon de 3D-viewer niet laden. Zorg voor een actieve internetverbinding of open via GitHub Pages (https).';
+      }
+    }
+
+    function renderSwatches() {
+      const container = document.getElementById('finish-swatches');
+      container.innerHTML = FINISHES.map(f => `
+        <button type="button" class="swatch ${f.id === currentFinish.id ? 'active' : ''}" data-finish="${f.id}">
+          <span class="swatch-dot" style="background: ${f.hex};"></span>
+          ${f.label}
+        </button>
+      `).join('');
+
+      container.querySelectorAll('[data-finish]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentFinish = FINISHES.find(f => f.id === btn.dataset.finish);
+          renderSwatches();
+          applyFinishToCurrentModel();
+        });
+      });
+    }
+
+    function resetCamera() {
+      if (!camera || !controls) return;
+      camera.position.set(2.8, 2.0, 3.2);
+      controls.target.set(0, 0, 0);
+      controls.update();
+    }
+
+    document.getElementById('close-modal-btn').addEventListener('click', () => modalBackdrop.classList.add('hidden'));
+    modalBackdrop.addEventListener('click', (e) => {
+      if (e.target === modalBackdrop) modalBackdrop.classList.add('hidden');
+    });
+
+    document.getElementById('btn-autorotate').addEventListener('click', (e) => {
+      if (!controls) return;
+      controls.autoRotate = !controls.autoRotate;
+      e.target.classList.toggle('active', controls.autoRotate);
+    });
+
+    document.getElementById('btn-wireframe').addEventListener('click', (e) => {
+      wireframeMode = !wireframeMode;
+      e.target.classList.toggle('active', wireframeMode);
+      applyFinishToCurrentModel();
+    });
+
+    document.getElementById('btn-reset-cam').addEventListener('click', resetCamera);
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.remove('hidden');
+      setTimeout(() => t.classList.add('hidden'), 2800);
+    }
+
+    function updateQuoteUI() {
+      const totalQty = quoteCart.reduce((sum, i) => sum + i.qty, 0);
+      const totalPrice = quoteCart.reduce((sum, i) => sum + i.price * i.qty, 0);
+      document.getElementById('quote-count').textContent = totalQty;
+      document.getElementById('quote-total').textContent = formatPrice(totalPrice);
+
+      const list = document.getElementById('quote-items');
+      if (!quoteCart.length) {
+        list.innerHTML = `<p style="color: var(--text-muted); font-size: 0.9rem;">Nog geen producten toegevoegd aan je offerte.</p>`;
+        return;
+      }
+
+      list.innerHTML = quoteCart.map((item, idx) => `
+        <div class="quote-item">
+          <div>
+            <h4>${item.name}</h4>
+            <p>${item.finish} · ${item.qty}× ${formatPrice(item.price)}</p>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-weight: 600; font-size: 0.9rem;">${formatPrice(item.price * item.qty)}</div>
+            <button data-remove="${idx}" style="border:none; background:none; color:var(--danger); font-size:0.78rem; cursor:pointer; margin-top:4px;">Verwijder</button>
+          </div>
+        </div>
+      `).join('');
+
+      list.querySelectorAll('[data-remove]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          quoteCart.splice(Number(btn.dataset.remove), 1);
+          updateQuoteUI();
+        });
+      });
+    }
+
+    document.getElementById('add-to-quote-btn').addEventListener('click', () => {
+      const qty = Math.max(1, parseInt(document.getElementById('modal-qty').value, 10) || 1);
+      const existing = quoteCart.find(i => i.id === currentProduct.id && i.finish === currentFinish.label);
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        quoteCart.push({
+          id: currentProduct.id,
+          name: currentProduct.name,
+          price: currentProduct.price,
+          finish: currentFinish.label,
+          qty
+        });
+      }
+      updateQuoteUI();
+      showToast(`${currentProduct.name} (${currentFinish.label}) toegevoegd.`);
+    });
+
+    const drawer = document.getElementById('quote-drawer');
+    document.getElementById('open-quote-btn').addEventListener('click', () => {
+      updateQuoteUI();
+      drawer.classList.remove('hidden');
+    });
+    document.getElementById('close-drawer-btn').addEventListener('click', () => drawer.classList.add('hidden'));
+    drawer.addEventListener('click', (e) => {
+      if (e.target === drawer) drawer.classList.add('hidden');
+    });
+
+    document.getElementById('submit-quote-btn').addEventListener('click', () => {
+      if (!quoteCart.length) {
+        showToast('Voeg eerst een product toe.');
+        return;
+      }
+      quoteCart = [];
+      document.getElementById('quote-note').value = '';
+      updateQuoteUI();
+      drawer.classList.add('hidden');
+      showToast('Mockup offerte-aanvraag verstuurd!');
+    });
+
+    const savedUser = readSession();
+    if (savedUser) enterPortal(savedUser);
+  </script>
+</body>
+</html>
