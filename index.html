@@ -139,16 +139,6 @@
       color: #FFFFFF;
     }
 
-    .btn-outline-light {
-      background: transparent;
-      border-color: rgba(255, 255, 255, 0.45);
-      color: #FFFFFF;
-    }
-
-    .btn-outline-light:hover {
-      background: rgba(255, 255, 255, 0.12);
-    }
-
     .btn-ghost {
       background: transparent;
       color: var(--text-muted);
@@ -288,26 +278,6 @@
     .field input:focus, .field textarea:focus {
       border-color: var(--loyal-blue);
       box-shadow: 0 0 0 3px rgba(0, 66, 93, 0.1);
-    }
-
-    .demo-box {
-      margin-top: 22px;
-      padding: 14px;
-      border-radius: var(--radius);
-      background: var(--loyal-blue-soft);
-      border-left: 4px solid var(--mango);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .demo-box strong {
-      color: var(--loyal-blue);
-      display: block;
-      margin-bottom: 2px;
     }
 
     .error-msg {
@@ -1056,16 +1026,6 @@
           </div>
           <button type="submit" class="btn btn-mango" style="width: 100%;">Inloggen</button>
         </form>
-
-        <div class="demo-box">
-          <div>
-            <strong>Demo-account (mockup)</strong>
-            klant@demo.nl / demo123
-          </div>
-          <button type="button" id="fill-demo-btn" class="btn btn-secondary" style="padding: 7px 12px; font-size: 0.78rem;">
-            Invullen
-          </button>
-        </div>
       </div>
     </div>
   </section>
@@ -1353,12 +1313,6 @@
       renderProducts();
     }
 
-    document.getElementById('fill-demo-btn').addEventListener('click', () => {
-      document.getElementById('email').value = PORTAL_CONFIG.accounts[0].email;
-      document.getElementById('password').value = PORTAL_CONFIG.accounts[0].password;
-      loginError.classList.add('hidden');
-    });
-
     document.getElementById('login-form').addEventListener('submit', (e) => {
       e.preventDefault();
       const email = document.getElementById('email').value.trim().toLowerCase();
@@ -1369,7 +1323,7 @@
       );
 
       if (!match) {
-        loginError.textContent = 'Onjuiste inloggegevens. Gebruik klant@demo.nl / demo123 (of klik op Invullen).';
+        loginError.textContent = 'Onjuist e-mailadres of wachtwoord. Controleer uw gegevens en probeer het opnieuw.';
         loginError.classList.remove('hidden');
         return;
       }
